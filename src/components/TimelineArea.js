@@ -12,13 +12,13 @@ import {
   Typography,
   Card as MuiCard,
   styled,
-  Slide,
   Fade,
   Grow
 } from '@material-ui/core';
 
 const Card = styled(MuiCard)({
-  padding: '1rem'
+  padding: '1.5rem',
+  lineHeight: '1.5rem'
 });
 
 const TimelineCard = ({ children, show }) => {
