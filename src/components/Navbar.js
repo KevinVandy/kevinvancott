@@ -61,7 +61,7 @@ export const Navbar = () => {
               <StyledLink to="/">Home</StyledLink>
             </Typography>
             <Typography variant="h6">
-              <StyledLink to="/contact">Contact</StyledLink>
+              <StyledLink to="/">Contact</StyledLink>
             </Typography>
           </Links>
         </Toolbar>
