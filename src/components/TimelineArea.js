@@ -8,17 +8,17 @@ import {
   TimelineConnector,
   TimelineContent
 } from '@material-ui/lab';
-import {
-  Typography,
-  Card as MuiCard,
-  styled,
-  Fade,
-  Grow
-} from '@material-ui/core';
+import { Typography, Card as MuiCard, styled, Fade, Grow } from '@material-ui/core';
 
 const Card = styled(MuiCard)({
   padding: '1.5rem',
-  lineHeight: '1.5rem'
+  lineHeight: '1.5rem',
+  margin: '0.5rem',
+  maxWidth: '70ch'
+});
+
+const StyledTimeline = styled(Timeline)({
+  marginLeft: '-30%'
 });
 
 const TimelineCard = ({ children, show }) => {
@@ -51,7 +51,7 @@ export const TimelineArea = () => {
 
   return (
     <Fade in={showTimeline} timeout={2000}>
-      <Timeline align="left">
+      <StyledTimeline align="left">
         <TimelineItem>
           <TimelineOppositeContent>
             <Typography color="textSecondary">June 2019 - Present</Typography>
@@ -135,7 +135,7 @@ export const TimelineArea = () => {
             </TimelineCard>
           </TimelineContent>
         </TimelineItem>
-      </Timeline>
+      </StyledTimeline>
     </Fade>
   );
 };
