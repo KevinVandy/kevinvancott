@@ -5,6 +5,10 @@
 }
 
 body {
-  background-image: linear-gradient(#fdfdfd, #ddd);
+  /* background-image: url('code-letters.jpg'); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100vh;
+  z-index: 3;
 }

@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   AppBar,
   Toolbar as MuiToolbar,
   IconButton,
   styled,
   Typography,
-  useTheme,
+  useTheme
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
+import { ContactModal } from './ContactModal';
 
 export const Navbar = () => {
   const theme = useTheme();
+  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   const NavbarSpacer = styled('div')({
     width: '100%',
-    height: '100px',
+    height: '100px'
   });
 
   const Toolbar = styled(MuiToolbar)({
@@ -23,7 +25,7 @@ export const Navbar = () => {
     gridTemplateColumns: '2rem auto auto',
     gridGap: '1rem',
     padding: '0 2rem'
-  })
+  });
 
   const Links = styled('div')({
     alignContent: 'end',
@@ -40,11 +42,11 @@ export const Navbar = () => {
     textDecoration: 'none',
     transitionDuration: '300ms',
     '&:visited': {
-      color: 'white',
+      color: 'white'
     },
     '&:hover': {
-      color: theme.palette.secondary.main,
-    },
+      color: theme.palette.secondary.main
+    }
   });
 
   return (
@@ -61,11 +63,15 @@ export const Navbar = () => {
               <StyledLink to="/">Home</StyledLink>
             </Typography>
             <Typography variant="h6">
-              <StyledLink to="/">Contact</StyledLink>
+              <StyledLink onClick={() => setContactModalOpen(true)}>Contact</StyledLink>
             </Typography>
           </Links>
         </Toolbar>
       </AppBar>
+      <ContactModal
+        open={contactModalOpen}
+        handleClose={() => setContactModalOpen(false)}
+      />
     </>
   );
 };

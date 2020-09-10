@@ -3,22 +3,20 @@ import { TimelineArea } from '../components/TimelineArea';
 import { styled } from '@material-ui/core';
 import { PersonalProjects } from '../components/PersonalProjects';
 import { ProfessionalApplications } from '../components/ProfessionalApplications';
+import { About } from '../components/About';
 
-const TimelineAreaArea = styled('div')({
+const TimelineAreaWrapper = styled('div')({
   maxWidth: '1400px',
-  margin: 'auto',
-  paddingRight: '20%',
-  '@media only screen and (max-width: 1000px)': {
-    paddingRight: '0'
-  }
+  margin: 'auto'
 });
 
 const Home = () => {
   return (
     <>
-      <TimelineAreaArea>
+      <About />
+      <TimelineAreaWrapper>
         <TimelineArea />
-      </TimelineAreaArea>
+      </TimelineAreaWrapper>
       <PersonalProjects />
       <ProfessionalApplications />
     </>
