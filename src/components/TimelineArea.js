@@ -8,17 +8,18 @@ import {
   TimelineConnector,
   TimelineContent
 } from '@material-ui/lab';
-import {
-  Typography,
-  Card as MuiCard,
-  styled,
-  Fade,
-  Grow
-} from '@material-ui/core';
+import { Typography, Card as MuiCard, styled, Fade, Grow } from '@material-ui/core';
 
 const Card = styled(MuiCard)({
   padding: '1.5rem',
   lineHeight: '1.5rem'
+});
+
+const IndentedList = styled('ul')({
+  marginLeft: '2rem',
+  '@media max-width(600px)': {
+    marginLeft: '-0.5rem'
+  }
 });
 
 const TimelineCard = ({ children, show }) => {
@@ -69,24 +70,66 @@ export const TimelineArea = () => {
               <Typography style={{ display: 'inline' }} variant="h6">
                 Full Stack Web Developer
               </Typography>
-              <Typography variant="body1"></Typography>• Formation-UI – React Component
-              Library based on Material-UI with Storybook Collaborated with Design team to
-              implement a new React Component Library to share common front-end code
-              between all projects and define a design system to unify the look and feel
-              between applications. Helped lead a new Accessibility focus for all our
-              React applications. Setup Rollup, Babel and Webpack configurations. Created
-              a Storybook for documentation and interactive isolated development of
-              components. • TalentMine – React PWA with Node.js serverless AWS lambdas,
-              Grails Restful APIs Updated front-end features using Material-UI, Formik,
-              Highcharts, and many other React libraries. Modified AWS Serverless Lambda
-              APIs to interact with DynamoDB NoSQL databases and send email notifications
-              via Postmark. Created and maintained unit tests with Jest. Created a new
-              multi-threaded back-end file processing service with Grails 4 and
-              Elasticsearch. • TalentBank – Grails Web Application with Bootstrap and
-              jQuery Created and maintained Restful APIs in the Grails framework, using
-              GORM and SQL queries, while preserving security with Spring Security and
-              Auth0. Added new front-end features using GSP server rendering, Bootstrap,
-              and jQuery.
+              <IndentedList>
+                <li>
+                  <h5>
+                    Formation-UI – <i>React Component Library with Storybook</i>
+                  </h5>
+                  <IndentedList>
+                    <li>
+                      <Typography variant="body1">
+                        Led new initiative to revamp the entire front-end development
+                        process to focus on code reusability and implement an official
+                        design system to unify the look and feel between all applications.
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography variant="body1">
+                        Set up Rollup, Webpack, and Babel configurations and created
+                        reusable React components with thorough API documentation using
+                        Storybook.
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography variant="body1">
+                        Implemented multiple robust automated regression testing systems.
+                      </Typography>
+                    </li>
+                  </IndentedList>
+                </li>
+                <li>
+                  <h5>
+                    TalentMine –{' '}
+                    <i>React Application with AWS Serverless Cloud Functions</i>
+                  </h5>
+                  <IndentedList>
+                    <li>
+                      <Typography variant="body1">
+                        Modernized front-end features using Material-UI, Formik,
+                        Highcharts, and many other React libraries.
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography variant="body1">
+                        Developed AWS Serverless Lambda APIs to interact with DynamoDB
+                        NoSQL databases and send email notifications via Postmark.
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography variant="body1">
+                        Created and maintained unit tests.
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography variant="body1">
+                        Created a new multi-threaded back-end file processing service with
+                        Grails 4 and Elasticsearch to help clients integrate new users
+                        with the system much faster.
+                      </Typography>
+                    </li>
+                  </IndentedList>
+                </li>
+              </IndentedList>
             </TimelineCard>
           </TimelineContent>
         </TimelineItem>
