@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled, Typography, Card } from '@material-ui/core';
+import { styled, Typography } from '@material-ui/core';
 
 const SkillsArea = styled('div')({
   margin: '2rem auto',
