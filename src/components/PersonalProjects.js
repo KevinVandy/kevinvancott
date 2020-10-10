@@ -1,5 +1,6 @@
 import React from 'react';
-import { styled, Typography, Card } from '@material-ui/core';
+import { styled, Typography } from '@material-ui/core';
+import { CardList } from './CardList';
 
 const data = [
   {
@@ -30,28 +31,11 @@ const PersonalProjectsArea = styled('div')({
   textAlign: 'center'
 });
 
-const CardList = styled('section')({
-  display: 'flex',
-  padding: '3rem',
-  overflowX: 'auto'
-});
-
-const StyledCard = styled(Card)({
-  width: `${1600 / data.length}px`,
-  height: '300px'
-});
-
 export const PersonalProjects = () => {
   return (
     <PersonalProjectsArea>
       <Typography variant="h2">My Personal Project Highlights</Typography>
-      <CardList className="card-list">
-        {data.map((d) => (
-          <StyledCard className="card">
-            <Typography variant="h4">{d.name}</Typography>
-          </StyledCard>
-        ))}
-      </CardList>
+      <CardList data={data} />
     </PersonalProjectsArea>
   );
 };
