@@ -19,19 +19,24 @@ const StyledCard = ({ length, zIndex, ...rest }) => {
 const ImageContainer = styled('div')({
   width: '100%',
   overflow: 'hidden',
-  objectFit: 'scale-down'
+  marginTop: '3rem'
 });
 
-export const CardList = ({data}) => {
+export const CardList = ({ data }) => {
   return (
     <CardListSection className="card-list">
       {data.map((d, i) => (
-        <StyledCard length={data.length} zIndex={data.length + 1 - i} className="card">
+        <StyledCard
+          className="card"
+          key={i}
+          length={data.length}
+          zIndex={data.length + 1 - i}
+        >
           <Typography style={{ margin: '1rem' }} variant="h4">
             {d.name}
           </Typography>
           <ImageContainer>
-            <img style={{ width: '100%' }} src={d.image} alt={d.name} />
+            <img style={{ width: '100%' }} src={d.image} alt={d.name} loading="lazy" />
           </ImageContainer>
         </StyledCard>
       ))}

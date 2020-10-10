@@ -1,6 +1,8 @@
 import React from 'react';
 import { styled, Typography } from '@material-ui/core';
 import { CardList } from './CardList';
+import MMImage from '../images/apps/mm.webp';
+import JEImage from '../images/apps/je.webp';
 
 const data = [
   {
@@ -9,11 +11,13 @@ const data = [
   },
   {
     name: 'Multi-Monitor Calculator',
-    link: 'https://multimonitorcalculator.com/'
+    link: 'https://multimonitorcalculator.com/',
+    image: MMImage
   },
   {
     name: 'Jeopardy 2019',
-    link: 'https://github.com/KevinVandy/jeopardy'
+    link: 'https://github.com/KevinVandy/jeopardy',
+    image: JEImage
   },
   {
     name: 'Weather Wolf',

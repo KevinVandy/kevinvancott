@@ -12,6 +12,15 @@ body {
   min-height: 100vh;
 }
 
+.card-list {
+  position: relative;
+  transition: 400ms;
+}
+
+.card-list:hover {
+  transform: translateX(-30px);
+}
+
 .card {
   cursor: pointer;
   display: flex;
@@ -23,14 +32,24 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-1rem);
+  transform: translateY(-1rem) translateX(30px);
   z-index: 99;
 }
 
-.card:hover~.card {
+.card:hover ~ .card {
   transform: translateX(130px);
 }
 
 .card:not(:first-child) {
   margin-left: -130px;
+}
+
+.card h4 {
+position: absolute;
+right: 0;
+  transition: 400ms;
+}
+
+.card:hover h4 {
+right: 30%;
 }

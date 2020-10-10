@@ -28,7 +28,7 @@ const data = [
   },
   {
     company: 'State of Nebraska',
-    name: 'ICharts',
+    name: 'ICHARTS',
     link: 'https://dhhs-icharts1.ne.gov/iCharts/',
     image: ICImage
   },
