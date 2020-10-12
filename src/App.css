@@ -13,12 +13,15 @@ body {
 }
 
 .card-list {
+  display: flex;
   position: relative;
   transition: 400ms;
+  transition-timing-function: ease-out;
+  overflow: visible;
 }
 
 .card-list:hover {
-  transform: translateX(-30px);
+  transform: translateX(-130px);
 }
 
 .card {
@@ -28,11 +31,12 @@ body {
   min-width: 250px;
   padding: 1.5rem;
   position: relative;
-  transition: 400ms;
+  transition: transform 400ms;
+  transition-timing-function: ease-out;
 }
 
 .card:hover {
-  transform: translateY(-1rem) translateX(30px);
+  transform: translateY(-1rem) translateX(130px);
   z-index: 99;
 }
 
@@ -45,11 +49,13 @@ body {
 }
 
 .card h4 {
-position: absolute;
-right: 0;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
   transition: 400ms;
+  transition-timing-function: ease-out;
 }
 
-.card:hover h4 {
-right: 30%;
+.card:hover h4, .card:first-child h4 {
+  right: 30%;
 }

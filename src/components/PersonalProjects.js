@@ -3,29 +3,38 @@ import { styled, Typography } from '@material-ui/core';
 import { CardList } from './CardList';
 import MMImage from '../images/apps/mm.webp';
 import JEImage from '../images/apps/je.webp';
+import WWImage from '../images/apps/ww.webp';
+import POImage from '../images/apps/po.webp';
 
 const data = [
   {
     name: 'Portfolio',
-    link: 'https://kevinvancott.com/'
+    link: 'https://kevinvancott.com/',
+    image: POImage,
+    techStack: 'React, Material-UI'
   },
   {
     name: 'Multi-Monitor Calculator',
     link: 'https://multimonitorcalculator.com/',
-    image: MMImage
+    image: MMImage,
+    techStack: 'React, Material-UI'
   },
   {
     name: 'Jeopardy 2019',
     link: 'https://github.com/KevinVandy/jeopardy',
-    image: JEImage
+    image: JEImage,
+    techStack: 'C#.NET Windows Forms, MS Access'
   },
   {
     name: 'Weather Wolf',
-    link: 'https://github.com/KevinVandy/WeatherWolf-Grails'
+    link: 'https://github.com/KevinVandy/WeatherWolf-Grails',
+    image: WWImage,
+    techStack: 'Grails (Groovy), MySQL, jQuery'
   },
   {
     name: 'µPlanner ',
-    link: 'https://github.com/KevinVandy/uPlanner'
+    link: 'https://github.com/KevinVandy/uPlanner',
+    techStack: 'JavaScript, PHP, MariaDB'
   }
 ];
 

@@ -12,31 +12,36 @@ const data = [
     company: 'Talent Plus, Inc',
     name: 'Formation-UI',
     link: 'https://test-formation-ui.netlify.app/',
-    image: FUIImage
+    image: FUIImage,
+    techStack: 'React, Material-UI'
   },
   {
     company: 'Talent Plus, Inc',
     name: 'TalentMine',
     link: 'https://talentmine.com/',
-    image: TMImage
+    image: TMImage,
+    techStack: 'AWS, React, TypeScript, Material-UI, Node.js, Grails (Groovy), Elasticsearch'
   },
   {
     company: 'Talent Plus, Inc',
     name: 'TalentBank',
     link: 'https://core.talentbankonline.com',
-    image: TBImage
+    image: TBImage,
+    techStack: 'Grails, jQuery, Bootstrap'
   },
   {
     company: 'State of Nebraska',
     name: 'ICHARTS',
     link: 'https://dhhs-icharts1.ne.gov/iCharts/',
-    image: ICImage
+    image: ICImage,
+    techStack: 'Java, jQuery, Tomahawk, COBOL, DB2'
   },
   {
     company: 'State of Nebraska',
     name: 'RMNPA',
     link: 'https://dhhs-rmnpa.ne.gov/RMNPAApp/',
-    image: RAImage
+    image: RAImage,
+    techStack: 'Java, jQuery, PrimeFaces, COBOL, DB2'
   }
 ];
 

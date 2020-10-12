@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styled, Typography, Card } from '@material-ui/core';
+import { ProjectModal } from './ProjectModal';
 
 const CardListSection = styled('section')({
-  display: 'flex',
+  display: 'block',
   padding: '3rem',
   overflowX: 'auto'
 });
@@ -23,23 +24,42 @@ const ImageContainer = styled('div')({
 });
 
 export const CardList = ({ data }) => {
+  const [currentProject, setCurrentProject] = useState();
+  const [open, setOpen] = useState(false);
+
+  const handleCardClick = (project) => {
+    setCurrentProject(project);
+    setOpen(true);
+  };
+
   return (
-    <CardListSection className="card-list">
-      {data.map((d, i) => (
-        <StyledCard
-          className="card"
-          key={i}
-          length={data.length}
-          zIndex={data.length + 1 - i}
-        >
-          <Typography style={{ margin: '1rem' }} variant="h4">
-            {d.name}
-          </Typography>
-          <ImageContainer>
-            <img style={{ width: '100%' }} src={d.image} alt={d.name} loading="lazy" />
-          </ImageContainer>
-        </StyledCard>
-      ))}
-    </CardListSection>
+    <>
+      <CardListSection>
+        <div className="card-list">
+          {data.map((project, i) => (
+            <StyledCard
+              className="card"
+              key={i}
+              length={data.length}
+              zIndex={data.length + 1 - i}
+              onClick={() => handleCardClick(project)}
+            >
+              <Typography style={{ margin: '1rem' }} variant="h4">
+                {project.name}
+              </Typography>
+              <ImageContainer>
+                <img
+                  style={{ width: '100%' }}
+                  src={project.image}
+                  alt={project.name}
+                  loading="lazy"
+                />
+              </ImageContainer>
+            </StyledCard>
+          ))}
+        </div>
+      </CardListSection>
+      <ProjectModal open={open} project={currentProject} handleClose={() => setOpen(false)} />
+    </>
   );
 };
