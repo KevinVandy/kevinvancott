@@ -5,6 +5,7 @@ import MMImage from '../images/apps/mm.webp';
 import JEImage from '../images/apps/je.webp';
 import WWImage from '../images/apps/ww.webp';
 import POImage from '../images/apps/po.webp';
+import UPImage from '../images/apps/up.webp';
 
 const data = [
   {
@@ -34,6 +35,7 @@ const data = [
   {
     name: 'µPlanner ',
     link: 'https://github.com/KevinVandy/uPlanner',
+    image: UPImage,
     techStack: 'JavaScript, PHP, MariaDB'
   }
 ];
