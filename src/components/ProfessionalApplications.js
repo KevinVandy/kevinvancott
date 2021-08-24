@@ -6,21 +6,36 @@ import FUIImage from '../images/apps/fui.webp';
 import TBImage from '../images/apps/tb.webp';
 import ICImage from '../images/apps/ic.webp';
 import RAImage from '../images/apps/ra.webp';
+import CPImage from '../images/apps/cp.png';
+import APImage from '../images/apps/ap.png';
 
 const data = [
+  {
+    company: 'ALLO Communications',
+    name: 'Agent Portal',
+    image: APImage,
+    techStack: 'TypeScript, React, Material-UI, GraphQL, Python'
+  },
+  {
+    company: 'ALLO Communications',
+    name: 'Customer Portal',
+    link: 'https://develop.d3pxk2rdbvwkz8.amplifyapp.com/get-allo',
+    image: CPImage,
+    techStack: 'TypeScript, React, Material-UI, GraphQL, Python, Elasticsearch'
+  },
   {
     company: 'Talent Plus, Inc',
     name: 'Formation-UI',
     link: 'https://test-formation-ui.netlify.app/',
     image: FUIImage,
-    techStack: 'React, Material-UI'
+    techStack: 'JavaScript, React, Material-UI, Storybook'
   },
   {
     company: 'Talent Plus, Inc',
     name: 'TalentMine',
     link: 'https://talentmine.com/',
     image: TMImage,
-    techStack: 'AWS, React, TypeScript, Material-UI, Node.js, Grails (Groovy), Elasticsearch'
+    techStack: 'JavaScript, React, Material-UI, Node.js, Grails (Groovy), Elasticsearch'
   },
   {
     company: 'Talent Plus, Inc',

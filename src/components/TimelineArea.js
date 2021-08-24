@@ -65,7 +65,70 @@ export const TimelineArea = () => {
       <StyledTimeline align="left">
         <TimelineItem>
           <TimelineOppositeContent>
-            <Typography color="textSecondary">June 2019 - Present</Typography>
+            <Typography color="textSecondary">December 2020 - Present</Typography>
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <TimelineCard show={showTimelineCards.length > 0}>
+              <Typography style={{ display: 'inline' }} variant="h3">
+                ALLO Communications
+              </Typography>
+              {' - '}
+              <Typography style={{ display: 'inline' }} variant="h4">
+                Software Engineer
+              </Typography>
+              <IndentedList>
+                <ListItem>
+                  <Typography variant="h5">
+                    Buyflow <i>React Applications with AWS AppSync (GraphQL) APIs </i>
+                  </Typography>
+                  <IndentedList>
+                    <ListItem>
+                      <Typography variant="body1">
+                        Architecting and re-organizing all front-end code into a monorepo
+                        structure with Nx to improve code reusability across multiple
+                        react applications to increase feature delivery speed and quality.
+                      </Typography>
+                    </ListItem>
+                    <ListItem>
+                      <Typography variant="body1">
+                         Designing and developing a new a portal to sell services to
+                        customers.
+                      </Typography>
+                    </ListItem>
+                    <ListItem>
+                      <Typography variant="body1">
+                       Building a new admin portal for agents to manage orders and
+                        provide admin tools.
+                      </Typography>
+                    </ListItem>
+                    <ListItem>
+                      <Typography variant="body1">
+                      Working directly with stakeholders to gather requirements and demo new features.
+                      </Typography>
+                    </ListItem>
+                    <ListItem>
+                      <Typography variant="body1">
+                      Establishing unit and end-to-end testing systems with Jest, Cypress, and Postman.
+                      </Typography>
+                    </ListItem>
+                    <ListItem>
+                      <Typography variant="body1">
+                      Pair programming with other developers and interns to teach React, CSS, Accessibility best practices, clean code patterns, and Test-Driven Development (TDD) mindsets.
+                      </Typography>
+                    </ListItem>
+                  </IndentedList>
+                </ListItem>
+              </IndentedList>
+            </TimelineCard>
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent>
+            <Typography color="textSecondary">June 2019 - December 2020</Typography>
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot />
