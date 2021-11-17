@@ -155,7 +155,7 @@ export const TimelineArea: FC<any> = () => {
     setTimeout(() => {
       setShowTimeline(true);
       setTimeout(() => {
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < jobs.length; i++) {
           setTimeout(() => {
             showTimelineCards.push(true);
             setShowTimelineCards([...showTimelineCards]);
@@ -163,7 +163,6 @@ export const TimelineArea: FC<any> = () => {
         }
       }, 1000);
     }, 3000);
-
     //eslint-disable-next-line
   }, []);
 
@@ -181,7 +180,7 @@ export const TimelineArea: FC<any> = () => {
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                <TimelineCard show={showTimelineCards.length > 0}>
+                <TimelineCard show={showTimelineCards.length > jobIndex}>
                   <Typography variant="h3">{job.company}</Typography>
                   <Typography variant="h4">{job.title}</Typography>
                   <IndentedList>
