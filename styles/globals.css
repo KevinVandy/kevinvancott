@@ -46,9 +46,9 @@ a {
 
 .card {
   backdrop-filter: blur(24px);
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.6) !important;
   cursor: pointer;
-  color: '#fff';
+  color: #fff !important;
   display: flex;
   flex-direction: column;
   min-width: 250px;
