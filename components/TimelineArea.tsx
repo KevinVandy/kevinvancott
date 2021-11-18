@@ -32,8 +32,8 @@ const TimelineSection = styled('section')({
 
 const Card = styled(MuiCard)({
   backdropFilter: 'blur(24px)',
-  backgroundColor: 'rgba(0,0,0,0.7)',
-  color: '#fff',
+  backgroundColor: 'rgba(0,0,0,0.7) !important',
+  color: '#fff !important',
   lineHeight: '1.5rem',
   margin: '0.5rem',
   maxWidth: '100ch',
