@@ -14,3 +14,72 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.cardList {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  transition: 400ms;
+  transition-timing-function: ease-out;
+  overflow: visible;
+}
+
+.cardList:hover {
+  transform: translateX(-120px);
+}
+
+.card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  padding: 1.5rem;
+  position: relative;
+  transition: transform 400ms;
+  transition-timing-function: ease-out;
+}
+
+.card:hover {
+  transform: translateY(-1rem) translateX(130px);
+  z-index: 99;
+}
+
+.card:hover ~ .card {
+  transform: translateX(120px);
+}
+
+.card:not(:first-child) {
+  margin-left: -120px;
+}
+
+.card h4 {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  transition: 400ms;
+  transition-timing-function: ease-out;
+}
+
+.card:hover h4,
+.card:first-child h4 {
+  right: 30%;
+}
+
+@media screen and (max-width: 720px) {
+  .cardList:hover {
+    transform: translateX(-50px);
+  }
+
+  .card:hover {
+    transform: translateY(-1rem) translateX(50px);
+  }
+
+  .card:hover ~ .card {
+    transform: translateX(50px);
+  }
+  
+  .card:not(:first-child) {
+    margin-left: -50px;
+  }
+}
+  

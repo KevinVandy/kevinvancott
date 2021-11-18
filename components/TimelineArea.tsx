@@ -1,4 +1,5 @@
 import { useState, useEffect, FC } from 'react';
+import Image from 'next/image';
 import {
   Timeline,
   TimelineItem,
@@ -8,8 +9,17 @@ import {
   TimelineConnector,
   TimelineContent,
 } from '@mui/lab';
-import WaveStyles from '../styles/Wave.module.css';
-import { Typography, Card as MuiCard, styled, Fade, Grow } from '@mui/material';
+import {
+  Typography,
+  Card as MuiCard,
+  styled,
+  Fade,
+  Grow,
+  useMediaQuery,
+} from '@mui/material';
+import AlloLogo from '../public/logos/allo.webp';
+import TalentPlusLogo from '../public/logos/talentplus.png';
+import NebraskaLogo from '../public/logos/nebraskadhhs.jpg';
 
 const TimelineSection = styled('section')({
   background: '#000',
@@ -24,16 +34,22 @@ const Card = styled(MuiCard)({
   lineHeight: '1.5rem',
   margin: '0.5rem',
   maxWidth: '100ch',
+  '@media(max-width: 720px)': {
+    width: '100%',
+  },
 });
 
 const StyledTimeline = styled(Timeline)({
   marginLeft: '-50%',
+  '@media(max-width: 720px)': {
+    marginLeft: '-95%',
+  },
 });
 
 const IndentedList = styled('ul')({
-  marginLeft: '2rem',
-  '@media max-width(600px)': {
-    marginLeft: '-0.5rem',
+  marginLeft: '1rem',
+  '@media(max-width: 720px)': {
+    marginLeft: '-1.5rem',
   },
 });
 
@@ -44,15 +60,49 @@ const ListItem = styled('li')({
 const TimelineCard: FC<any> = ({ children, show }) => {
   return (
     <Grow in={show} timeout={3000}>
-      <Card>{children}</Card>
+      <Card style={{ position: 'relative' }}>{children}</Card>
     </Grow>
   );
 };
+
+const CompanyLogoWrapper = styled('div')({
+  display: 'flex',
+  '@media(min-width: 900px)': {
+    position: 'absolute',
+    top: '1rem',
+    right: '1rem',
+  },
+});
+
+const CompanyName = styled(Typography)({
+  fontSize: '2.5rem',
+  margin: '1rem auto',
+  '@media(max-width: 720px)': {
+    fontSize: '2rem',
+  },
+  '@media(max-width: 480px)': {
+    fontSize: '1.5rem',
+  },
+});
+
+const JobTitle = styled(Typography)({
+  fontSize: '1.75rem',
+  margin: '1rem auto',
+  '@media(max-width: 720px)': {
+    fontSize: '1.5rem',
+  },
+  '@media(max-width: 480px)': {
+    fontSize: '1.25rem',
+  },
+});
 
 const jobs = [
   {
     dateRange: 'December 2020 - Present',
     company: 'ALLO Communications',
+    logo: AlloLogo,
+    logoHeight: 60,
+    logoWidth: 120,
     title: 'Software Engineer',
     projects: [
       {
@@ -74,6 +124,9 @@ const jobs = [
   {
     dateRange: 'June 2019 - December 2020',
     company: 'Talent Plus, Inc',
+    logo: TalentPlusLogo,
+    logoHeight: 40,
+    logoWidth: 150,
     title: 'Software Developer',
     projects: [
       {
@@ -112,6 +165,9 @@ const jobs = [
   {
     dateRange: 'January - June 2019',
     company: 'State of Nebraska - DHHS',
+    logo: NebraskaLogo,
+    logoHeight: 80,
+    logoWidth: 120,
     title: 'IT Applications Developer',
     projects: [
       {
@@ -148,6 +204,7 @@ const jobs = [
 ];
 
 export const TimelineArea: FC<any> = () => {
+  const isDesktop = useMediaQuery('(min-width: 720px)');
   const [showTimeline, setShowTimeline] = useState(false);
   const [showTimelineCards, setShowTimelineCards] = useState<boolean[]>([]);
 
@@ -169,20 +226,32 @@ export const TimelineArea: FC<any> = () => {
   return (
     <TimelineSection>
       <Fade in={showTimeline} timeout={2000}>
-        <StyledTimeline>
+        <StyledTimeline position="right">
           {jobs.map((job, jobIndex) => (
             <TimelineItem key={jobIndex}>
-              <TimelineOppositeContent>
-                <Typography>{job.dateRange}</Typography>
-              </TimelineOppositeContent>
+              {isDesktop && (
+                <TimelineOppositeContent>
+                  <Typography>{job.dateRange}</Typography>
+                </TimelineOppositeContent>
+              )}
               <TimelineSeparator>
                 <TimelineDot />
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
                 <TimelineCard show={showTimelineCards.length > jobIndex}>
-                  <Typography variant="h3">{job.company}</Typography>
-                  <Typography variant="h4">{job.title}</Typography>
+                  {job.logo && (
+                    <CompanyLogoWrapper>
+                      <Image
+                        alt="company logo"
+                        src={job.logo}
+                        height={job.logoHeight}
+                        width={job.logoWidth}
+                      />
+                    </CompanyLogoWrapper>
+                  )}
+                  <CompanyName variant="h3">{job.company}</CompanyName>
+                  <JobTitle variant="h4">{job.title}</JobTitle>
                   <IndentedList>
                     {job?.projects?.map?.((project, projectIndex) => (
                       <ListItem key={projectIndex}>

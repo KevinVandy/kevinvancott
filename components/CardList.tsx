@@ -2,7 +2,6 @@ import React, { useState, FC } from 'react';
 import { styled, Typography, Card } from '@mui/material';
 import { ProjectModal } from './ProjectModal';
 import Image from 'next/image';
-import CardListStyles from '../styles/CardList.module.css';
 
 const CardListSection = styled('div')({
   display: 'block',
@@ -12,17 +11,17 @@ const CardListSection = styled('div')({
 
 const StyledCard: FC<any> = ({ length, zIndex, ...rest }) => {
   const StyledCardRaw = styled(Card)({
-    width: `${1600 / length}px`,
-    height: '300px',
+    width: `${1800 / length}px`,
+    height: '350px',
     zIndex: zIndex,
   });
   return <StyledCardRaw {...rest} />;
 };
 
 const ImageContainer = styled('div')({
-  width: '100%',
-  overflow: 'hidden',
   marginTop: '3rem',
+  overflow: 'hidden',
+  width: '100%',
 });
 
 const CardList: FC<any> = ({ data }) => {
@@ -37,10 +36,10 @@ const CardList: FC<any> = ({ data }) => {
   return (
     <>
       <CardListSection>
-        <div className={CardListStyles.cardList}>
+        <div className="cardList">
           {data.map((project: any, i: number) => (
             <StyledCard
-              className={CardListStyles.card}
+              className="card"
               key={i}
               length={data.length}
               zIndex={data.length + 1 - i}
