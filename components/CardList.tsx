@@ -9,15 +9,6 @@ const CardListSection = styled('div')({
   overflowX: 'auto',
 });
 
-const StyledCard: FC<any> = ({ length, zIndex, ...rest }) => {
-  const StyledCardRaw = styled(Card)({
-    width: `${130 + 1800 / length}px`,
-    height: '350px',
-    zIndex: zIndex,
-  });
-  return <StyledCardRaw {...rest} />;
-};
-
 const ImageContainer = styled('div')({
   marginTop: '3rem',
   overflow: 'hidden',
@@ -38,12 +29,15 @@ const CardList: FC<any> = ({ data }) => {
       <CardListSection>
         <div className="cardList">
           {data.map((project: any, i: number) => (
-            <StyledCard
+            <Card
               className="card"
               key={i}
-              length={data.length}
-              zIndex={data.length + 1 - i}
               onClick={() => handleCardClick(project)}
+              style={{
+                width: `${130 + 1800 / data.length}px`,
+                height: '350px',
+                zIndex: data.length + 1 - i,
+              }}
             >
               <Typography style={{ margin: '1rem' }} variant="h5">
                 {project.name}
@@ -51,7 +45,7 @@ const CardList: FC<any> = ({ data }) => {
               <ImageContainer>
                 <Image src={project.image} alt={project.name} loading="lazy" />
               </ImageContainer>
-            </StyledCard>
+            </Card>
           ))}
         </div>
       </CardListSection>
