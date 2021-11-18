@@ -17,23 +17,32 @@ import {
   Grow,
   useMediaQuery,
 } from '@mui/material';
+import VerticalBackground from '../public/background-vertical.jpg';
 import AlloLogo from '../public/logos/allo.webp';
 import TalentPlusLogo from '../public/logos/talentplus.png';
 import NebraskaLogo from '../public/logos/nebraskadhhs.jpg';
+import WaveTop from './WaveTop';
 
 const TimelineSection = styled('section')({
-  background: '#000',
-  color: '#fff',
-  padding: '1rem',
+  color: '#000',
+  padding: '8rem 1rem',
   position: 'relative',
   paddingBottom: '500px',
 });
 
 const Card = styled(MuiCard)({
-  padding: '1.5rem',
+  backdropFilter: 'blur(24px)',
+  backgroundColor: 'rgba(0,0,0,0.7)',
+  color: '#fff',
   lineHeight: '1.5rem',
   margin: '0.5rem',
   maxWidth: '100ch',
+  padding: '1.5rem',
+  transition: 'all 200ms ease-in-out',
+  '&:hover': {
+    backgroundColor: 'rgba(0,0,0,0.8)',
+
+  },
   '@media(max-width: 720px)': {
     width: '100%',
   },
@@ -60,7 +69,9 @@ const ListItem = styled('li')({
 const TimelineCard: FC<any> = ({ children, show }) => {
   return (
     <Grow in={show} timeout={3000}>
-      <Card style={{ position: 'relative' }}>{children}</Card>
+      <div>
+        <Card style={{ position: 'relative' }}>{children}</Card>
+      </div>
     </Grow>
   );
 };
@@ -224,7 +235,8 @@ export const TimelineArea: FC<any> = () => {
   }, []);
 
   return (
-    <TimelineSection>
+    <TimelineSection className="background-vertical">
+      <WaveTop />
       <Fade in={showTimeline} timeout={2000}>
         <StyledTimeline position="right">
           {jobs.map((job, jobIndex) => (

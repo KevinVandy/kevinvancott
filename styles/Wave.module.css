@@ -1,11 +1,3 @@
-.background {
-  background: url('../public/background.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-}
-
 .waveBottom {
   position: absolute;
   bottom: 0;

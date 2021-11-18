@@ -15,6 +15,22 @@ a {
   box-sizing: border-box;
 }
 
+.background-horizontal {
+  background: url('../public/background-horizontal.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.background-vertical {
+  background: url('../public/background-vertical.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
 .cardList {
   display: flex;
   justify-content: center;
@@ -29,18 +45,23 @@ a {
 }
 
 .card {
+  backdrop-filter: blur(24px);
+  background-color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
+  color: '#fff';
   display: flex;
   flex-direction: column;
   min-width: 250px;
   padding: 1.5rem;
   position: relative;
-  transition: all 400ms !important;
+  transition: transform 400ms !important;
   transition-timing-function: ease-out !important;
 }
 
 .card:hover {
   transform: translateY(-1rem) translateX(120px) scale(1.1);
+  background-color: rgba(0, 0, 0, 0.8);
+
   z-index: 99;
 }
 
@@ -60,17 +81,10 @@ a {
   margin-left: -120px;
 }
 
-.card h4 {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
+.card h5 {
+  color: #fff;
   transition: 400ms;
   transition-timing-function: ease-out;
-}
-
-.card:hover h4,
-.card:first-child h4 {
-  right: 30%;
 }
 
 @media screen and (max-width: 720px) {
