@@ -35,13 +35,21 @@ a {
   min-width: 250px;
   padding: 1.5rem;
   position: relative;
-  transition: transform 400ms;
+  transition: all 400ms;
   transition-timing-function: ease-out;
 }
 
 .card:hover {
-  transform: translateY(-1rem) translateX(130px);
+  transform: translateY(-1rem) translateX(120px) scale(1.1);
   z-index: 99;
+}
+
+.card img {
+  transition: all 400ms;
+}
+
+.card:hover img {
+  transform: scale(1.05);
 }
 
 .card:hover ~ .card {

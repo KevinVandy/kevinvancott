@@ -25,6 +25,7 @@ import BootstrapLogo from '../public/logos/bootstrap.png';
 import SMUILogo from '../public/logos/smui.png';
 import GraphQLLogo from '../public/logos/graphql.png';
 import AWSLogo from '../public/logos/aws.png';
+import NextJsLogo from '../public/logos/nextjs.png';
 import Image from 'next/image';
 
 export const skillImgs = [
@@ -34,9 +35,10 @@ export const skillImgs = [
   { src: TSLogo, name: 'TypeScript', width: 60, height: 60, featured: true },
   { src: NodeJSLogo, name: 'NodeJS', width: 110, height: 60, featured: true },
   { src: ReactLogo, name: 'React', width: 90, height: 60, featured: true },
+  { src: NextJsLogo, name: 'NextJS', width: 60, height: 60, featured: true },
   { src: SvelteLogo, name: 'Svelte', width: 50, height: 60, featured: true },
   { src: MUILogo, name: 'Material UI', width: 60, height: 60, featured: true },
-  { src: BootstrapLogo, name: 'Bootstrap', width: 90, height: 60, featured: true },
+  { src: BootstrapLogo, name: 'Bootstrap', width: 90, height: 60, featured: false },
   { src: StorybookLogo, name: 'Storybook', width: 60, height: 60, featured: true },
   { src: CSharpLogo, name: 'C#.NET', width: 55, height: 60, featured: true },
   { src: JavaLogo, name: 'Java', width: 60, height: 60, featured: true },

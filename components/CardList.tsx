@@ -11,7 +11,7 @@ const CardListSection = styled('div')({
 
 const StyledCard: FC<any> = ({ length, zIndex, ...rest }) => {
   const StyledCardRaw = styled(Card)({
-    width: `${1800 / length}px`,
+    width: `${130 + 1800 / length}px`,
     height: '350px',
     zIndex: zIndex,
   });
