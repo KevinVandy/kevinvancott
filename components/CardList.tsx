@@ -42,6 +42,11 @@ const CardList: FC<any> = ({ data }) => {
               <Typography style={{ margin: '1rem' }} variant="h5">
                 {project.name}
               </Typography>
+              {project.company && (
+                <Typography style={{ margin: '0' }} variant="caption">
+                  <em>{project.company}</em>
+                </Typography>
+              )}
               <ImageContainer>
                 <Image src={project.image} alt={project.name} loading="lazy" />
               </ImageContainer>

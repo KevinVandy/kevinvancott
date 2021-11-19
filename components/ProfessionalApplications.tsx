@@ -10,13 +10,13 @@ import APImage from '../public/apps/ap.png';
 
 const data = [
   {
-    company: 'ALLO Communications',
+    company: 'ALLO',
     name: 'Agent Portal',
     image: APImage,
     techStack: ['Nx', 'TypeScript', 'React', 'Material UI', 'GraphQL', 'Python'],
   },
   {
-    company: 'ALLO Communications',
+    company: 'ALLO',
     name: 'Customer Portal',
     link: 'https://customertest.allofiber.org/get-allo',
     image: CPImage,
@@ -31,14 +31,7 @@ const data = [
     ],
   },
   {
-    company: 'Talent Plus, Inc',
-    name: 'Formation-UI',
-    link: 'https://test-formation-ui.netlify.app/',
-    image: FUIImage,
-    techStack: ['JavaScript', 'React', 'Material UI', 'Storybook'],
-  },
-  {
-    company: 'Talent Plus, Inc',
+    company: 'Talent Plus',
     name: 'TalentMine',
     link: 'https://talentmine.com/',
     image: TMImage,
@@ -53,11 +46,18 @@ const data = [
     ],
   },
   {
-    company: 'Talent Plus, Inc',
+    company: 'Talent Plus',
     name: 'TalentBank',
     link: 'https://core.talentbankonline.com',
     image: TBImage,
     techStack: ['Grails', 'jQuery', 'Bootstrap', 'MySQL'],
+  },
+  {
+    company: 'Talent Plus',
+    name: 'Formation-UI',
+    link: 'https://test-formation-ui.netlify.app/',
+    image: FUIImage,
+    techStack: ['JavaScript', 'React', 'Material UI', 'Storybook'],
   },
   {
     company: 'State of Nebraska',

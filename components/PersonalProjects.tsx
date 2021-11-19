@@ -1,23 +1,23 @@
 import { styled, Typography } from '@mui/material';
 import CardList from './CardList';
-import MMImage from '../public/apps/mm.webp';
+import MMImage from '../public/apps/mm.png';
 import JEImage from '../public/apps/je.webp';
 import WWImage from '../public/apps/ww.webp';
-import POImage from '../public/apps/po.webp';
+import POImage from '../public/apps/po.png';
 import UPImage from '../public/apps/up.webp';
 
 const data = [
-  {
-    name: 'Portfolio',
-    link: 'https://kevinvancott.com/',
-    image: POImage,
-    techStack: ['React', 'Material UI'],
-  },
   {
     name: 'Multi-Monitor Calculator',
     link: 'https://multimonitorcalculator.com/',
     image: MMImage,
     techStack: ['Svelte', 'Svelte Material UI', 'SASS'],
+  },
+  {
+    name: 'Portfolio',
+    link: 'https://kevinvancott.com/',
+    image: POImage,
+    techStack: ['React', 'NextJS', 'Material UI'],
   },
   {
     name: 'Jeopardy 2019',

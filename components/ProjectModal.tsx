@@ -6,10 +6,12 @@ import {
   DialogActions,
   Button,
   Typography,
+  IconButton,
 } from '@mui/material';
 import Image from 'next/image';
 import { styled } from '@mui/system';
 import { skillImgs } from './Skills';
+import CloseIcon from '@mui/icons-material/Close';
 
 const StyledLink = styled('a')(({ theme }) => ({
   fontWeight: 'bold',
@@ -49,6 +51,7 @@ const ImgContainer = styled('div')({
 const Item = styled(Typography)({
   fontSize: '1.2rem',
   lineHeight: '2rem',
+  textAlign: 'center',
 });
 
 interface ProjectModalProps {
@@ -61,7 +64,24 @@ export const ProjectModal: FC<ProjectModalProps> = ({ open, handleClose, project
   if (!project) return null;
 
   return (
-    <Dialog maxWidth="lg" onBackdropClick={handleClose} open={open}>
+    <Dialog
+      PaperProps={{
+        style: {
+          backgroundColor: 'rgba(33,33,33,.8)',
+          color: '#fff',
+          backdropFilter: 'blur(24px)',
+        },
+      }}
+      maxWidth="lg"
+      onBackdropClick={handleClose}
+      open={open}
+    >
+      <IconButton
+        style={{ position: 'absolute', top: '1rem', right: '1rem', color: '#fff' }}
+        onClick={handleClose}
+      >
+        <CloseIcon />
+      </IconButton>
       <DialogTitle style={{ textAlign: 'center' }}>
         <Typography variant="h2">{project.name}</Typography>
       </DialogTitle>
