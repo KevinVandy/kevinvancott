@@ -54,14 +54,13 @@ a {
   min-width: 250px;
   padding: 1.5rem;
   position: relative;
-  transition: transform 400ms !important;
+  transition: all 400ms !important;
   transition-timing-function: ease-out !important;
 }
 
 .card:hover {
   transform: translateY(-1rem) translateX(120px) scale(1.1);
-  background-color: rgba(0, 0, 0, 0.8);
-
+  background-color: rgba(0, 0, 0, 0.8) !important;
   z-index: 99;
 }
 

@@ -45,7 +45,7 @@ const Card = styled(MuiCard)({
   padding: '1.5rem',
   transition: 'all 200ms ease-in-out',
   '&:hover': {
-    backgroundColor: 'rgba(0,0,0,0.8)',
+    backgroundColor: 'rgba(0,0,0,0.8) !important',
   },
   '@media(max-width: 720px)': {
     width: '100%',
@@ -138,7 +138,7 @@ const jobs = [
   },
   {
     dateRange: 'March 2021 - Present',
-    company: 'Nucamp',
+    company: 'Nucamp Coding Bootcamp',
     logo: NucampLogo,
     logoHeight: 30,
     logoWidth: 135,

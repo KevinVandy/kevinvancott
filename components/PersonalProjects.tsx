@@ -17,7 +17,7 @@ const data = [
     name: 'Multi-Monitor Calculator',
     link: 'https://multimonitorcalculator.com/',
     image: MMImage,
-    techStack: ['Svelte', 'Svelte Material UI'],
+    techStack: ['Svelte', 'Svelte Material UI', 'SASS'],
   },
   {
     name: 'Jeopardy 2019',

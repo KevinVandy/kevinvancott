@@ -6,29 +6,44 @@ import {
   DialogActions,
   Button,
   Typography,
-  useTheme,
 } from '@mui/material';
 import Image from 'next/image';
 import { styled } from '@mui/system';
 import { skillImgs } from './Skills';
 
 const StyledLink = styled('a')(({ theme }) => ({
-  color: 'black',
   fontWeight: 'bold',
   textDecoration: 'none',
-  transitionDuration: '300ms',
-  '&:visited': {
-    color: 'black',
-  },
-  // '&:hover': {
-  //   color: theme.palette.primary.main,
-  // },
 }));
 
-const StyledTypography = styled(Typography)({
-  lineHeight: '1.5rem',
-  padding: '0.5rem 0',
-  display: 'inline',
+const SkillGrid = styled('div')({
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '0.5rem',
+  margin: 'auto',
+  textAlign: 'center',
+  justifyContent: 'center',
+});
+
+const SkillTitle = styled(Typography)({
+  textAlign: 'center',
+  padding: '1rem',
+});
+
+const SkillContainer = styled('div')({
+  height: '120px',
+  width: '120px',
+  margin: '1rem 0',
+  textAlign: 'center',
+});
+
+const ImgContainer = styled('div')({
+  transition: 'all 200ms ease-in-out',
+  cursor: 'pointer',
+  margin: 'auto',
+  '&:hover': {
+    transform: 'scale(1.1)',
+  },
 });
 
 const Item = styled(Typography)({
@@ -46,8 +61,8 @@ export const ProjectModal: FC<ProjectModalProps> = ({ open, handleClose, project
   if (!project) return null;
 
   return (
-    <Dialog maxWidth="md" onBackdropClick={handleClose} open={open}>
-      <DialogTitle>
+    <Dialog maxWidth="lg" onBackdropClick={handleClose} open={open}>
+      <DialogTitle style={{ textAlign: 'center' }}>
         <Typography variant="h2">{project.name}</Typography>
       </DialogTitle>
       <DialogContent>
@@ -58,16 +73,7 @@ export const ProjectModal: FC<ProjectModalProps> = ({ open, handleClose, project
           </StyledLink>
         </Item>
         <Item>
-          Tech Stack:{' '}
-          <StyledTypography variant="h5">{project.techStack.join(', ')}</StyledTypography>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '2rem',
-              padding: '1rem',
-            }}
-          >
+          <SkillGrid>
             {skillImgs
               .filter((skill) =>
                 project.techStack
@@ -75,16 +81,19 @@ export const ProjectModal: FC<ProjectModalProps> = ({ open, handleClose, project
                   .includes(skill.name.toLowerCase()),
               )
               .map((skill, i) => (
-                <div title={skill.name} key={i}>
-                  <Image
-                    width={skill.width}
-                    height={skill.height}
-                    alt={skill.name}
-                    src={skill.src}
-                  />
-                </div>
+                <SkillContainer title={skill.name} key={i}>
+                  <ImgContainer>
+                    <Image
+                      width={skill.width}
+                      height={skill.height}
+                      alt={skill.name}
+                      src={skill.src}
+                    />
+                  </ImgContainer>
+                  <SkillTitle>{skill.name}</SkillTitle>
+                </SkillContainer>
               ))}
-          </div>
+          </SkillGrid>
           <Image src={project.image} alt={project.name} loading="lazy" />
         </Item>
       </DialogContent>

@@ -26,6 +26,7 @@ import SMUILogo from '../public/logos/smui.png';
 import GraphQLLogo from '../public/logos/graphql.png';
 import AWSLogo from '../public/logos/aws.png';
 import NextJsLogo from '../public/logos/nextjs.png';
+import SASSLogo from '../public/logos/sass.png';
 import Image from 'next/image';
 
 export const skillImgs = [
@@ -37,6 +38,7 @@ export const skillImgs = [
   { src: ReactLogo, name: 'React', width: 90, height: 60, featured: true },
   { src: NextJsLogo, name: 'NextJS', width: 60, height: 60, featured: true },
   { src: SvelteLogo, name: 'Svelte', width: 50, height: 60, featured: true },
+  { src: SASSLogo, name: 'SASS', width: 60, height: 60, featured: false },
   { src: MUILogo, name: 'Material UI', width: 60, height: 60, featured: true },
   { src: BootstrapLogo, name: 'Bootstrap', width: 90, height: 60, featured: false },
   { src: StorybookLogo, name: 'Storybook', width: 60, height: 60, featured: true },
@@ -93,13 +95,12 @@ const SkillContainer = styled('div')({
   textAlign: 'center',
 });
 
-const Img = styled(Image)({
-  maxHeight: '10px',
-  transition: 'all 200ms ease-in-out',
+const ImgContainer = styled('div')({
+  transition: 'all 300ms ease-in-out',
   cursor: 'pointer',
   margin: 'auto',
   '&:hover': {
-    transform: 'scale(1.1)',
+    transform: 'scale(1.2)',
   },
 });
 
@@ -120,13 +121,14 @@ const Skill: FC<SkillProps> = ({ skill, index }) => {
       <Slide direction="left" in={visible} timeout={1000}>
         <Fade in={visible}>
           <SkillContainer key={index}>
-            <Img
-              alt="html"
-              src={skill.src}
-              height={skill.height}
-              width={skill.width}
-              layout="intrinsic"
-            />
+            <ImgContainer>
+              <Image
+                alt="html"
+                src={skill.src}
+                height={skill.height}
+                width={skill.width}
+              />
+            </ImgContainer>
             <SkillTitle variant="subtitle1">{skill.name}</SkillTitle>
           </SkillContainer>
         </Fade>
