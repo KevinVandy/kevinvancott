@@ -17,10 +17,10 @@ import {
   Grow,
   useMediaQuery,
 } from '@mui/material';
-import VerticalBackground from '../public/background-vertical.jpg';
 import AlloLogo from '../public/logos/allo.webp';
 import TalentPlusLogo from '../public/logos/talentplus.png';
-import NebraskaLogo from '../public/logos/nebraskadhhs.jpg';
+import NebraskaLogo from '../public/logos/nebraskadhhs.png';
+import NucampLogo from '../public/logos/nucamp.svg';
 import WaveTop from './WaveTop';
 
 const TimelineSection = styled('section')({
@@ -28,6 +28,11 @@ const TimelineSection = styled('section')({
   padding: '8rem 1rem',
   position: 'relative',
   paddingBottom: '500px',
+});
+
+const Title = styled(Typography)({
+  textAlign: 'center',
+  padding: '1rem',
 });
 
 const Card = styled(MuiCard)({
@@ -41,7 +46,6 @@ const Card = styled(MuiCard)({
   transition: 'all 200ms ease-in-out',
   '&:hover': {
     backgroundColor: 'rgba(0,0,0,0.8)',
-
   },
   '@media(max-width: 720px)': {
     width: '100%',
@@ -49,7 +53,7 @@ const Card = styled(MuiCard)({
 });
 
 const StyledTimeline = styled(Timeline)({
-  marginLeft: '-50%',
+  marginLeft: '-45%',
   '@media(max-width: 720px)': {
     marginLeft: '-95%',
   },
@@ -86,8 +90,8 @@ const CompanyLogoWrapper = styled('div')({
 });
 
 const CompanyName = styled(Typography)({
-  fontSize: '2.5rem',
-  margin: '1rem auto',
+  fontSize: '2.25rem',
+  paddingRight: '4rem',
   '@media(max-width: 720px)': {
     fontSize: '2rem',
   },
@@ -112,8 +116,8 @@ const jobs = [
     dateRange: 'December 2020 - Present',
     company: 'ALLO Communications',
     logo: AlloLogo,
-    logoHeight: 60,
-    logoWidth: 120,
+    logoHeight: 70,
+    logoWidth: 135,
     title: 'Software Engineer',
     projects: [
       {
@@ -133,11 +137,27 @@ const jobs = [
     ],
   },
   {
+    dateRange: 'March 2021 - Present',
+    company: 'Nucamp',
+    logo: NucampLogo,
+    logoHeight: 30,
+    logoWidth: 135,
+    title: 'Coding Instructor',
+    projects: [
+      {
+        name: '',
+        description: '',
+        techStack: ['HTML', 'CSS', 'JavaScript', 'React'],
+        accomplishments: ['Teaching HTML, CSS, JavaScript, and React courses on the weekends'],
+      },
+    ],
+  },
+  {
     dateRange: 'June 2019 - December 2020',
     company: 'Talent Plus, Inc',
     logo: TalentPlusLogo,
     logoHeight: 40,
-    logoWidth: 150,
+    logoWidth: 180,
     title: 'Software Developer',
     projects: [
       {
@@ -175,10 +195,10 @@ const jobs = [
   },
   {
     dateRange: 'January - June 2019',
-    company: 'State of Nebraska - DHHS',
+    company: 'State of Nebraska',
     logo: NebraskaLogo,
-    logoHeight: 80,
-    logoWidth: 120,
+    logoHeight: 50,
+    logoWidth: 150,
     title: 'IT Applications Developer',
     projects: [
       {
@@ -237,6 +257,7 @@ export const TimelineArea: FC<any> = () => {
   return (
     <TimelineSection className="background-vertical">
       <WaveTop />
+      <Title variant="h3">What I&rsquo;ve Done</Title>
       <Fade in={showTimeline} timeout={2000}>
         <StyledTimeline position="right">
           {jobs.map((job, jobIndex) => (
@@ -268,11 +289,22 @@ export const TimelineArea: FC<any> = () => {
                     {job?.projects?.map?.((project, projectIndex) => (
                       <ListItem key={projectIndex}>
                         <Typography variant="h5">
-                          {project.name}
-                          {' - '}
-                          <i>{project?.description}</i>
+                          {project.name && (
+                            <>
+                              {project.name}
+                              {project.description && (
+                                <>
+                                  {' - '}
+                                  <i style={{ fontSize: '0.8em' }}>
+                                    {project?.description}
+                                  </i>
+                                  )
+                                </>
+                              )}
+                            </>
+                          )}
                         </Typography>
-                        <IndentedList>
+                        <IndentedList style={{ padding: '1rem 0' }}>
                           {project?.accomplishments?.map?.(
                             (accomplishment, accomplishmentIndex) => (
                               <ListItem key={accomplishmentIndex}>

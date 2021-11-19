@@ -1,9 +1,10 @@
-import { Fade, Typography } from '@mui/material';
+import { Fade, Typography, Link as MuiLink } from '@mui/material';
 import { styled } from '@mui/system';
 import { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
-import WaveStyles from '../styles/Wave.module.css';
 import ProfilePic from '../public/profile.jpg';
+import LinkedInLogo from '../public/logos/linkedin.webp';
+import GithubLogo from '../public/logos/githubalt.png';
 import WaveBottom from './WaveBottom';
 
 const HeaderContainer = styled('header')({
@@ -12,7 +13,7 @@ const HeaderContainer = styled('header')({
 
 const HelloTitle = styled(Typography)({
   textAlign: 'center',
-  padding: '2rem',
+  paddingTop: '3rem',
   fontSize: '6rem',
   '@media(max-width: 600px)': {
     fontSize: '4rem',
@@ -21,6 +22,28 @@ const HelloTitle = styled(Typography)({
 
 const JobTitle = styled(Typography)({
   textAlign: 'center',
+  paddingTop: '1rem',
+});
+
+const QuickLinks = styled('div')({
+  display: 'flex',
+  position: 'absolute',
+  top: '.1rem',
+  right: '.1rem',
+});
+
+const Link = styled(MuiLink)({
+  color: '#000',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  textAlign: 'center',
+  padding: '1rem',
+  gap: '0.5rem',
+  transition: 'all 200ms ease-in-out',
+  '&:hover': {
+    transform: 'scale(1.1)',
+  },
 });
 
 const Header: FC = () => {
@@ -34,6 +57,24 @@ const Header: FC = () => {
 
   return (
     <HeaderContainer className="background-horizontal">
+      <QuickLinks>
+        <Link
+          href="https://www.github.com/kevinvandy"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Github"
+        >
+          <Image alt="github" src={GithubLogo} height={20} width={20} />
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/kevinthomasvancott/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LinkedIn"
+        >
+          <Image alt="linkedin" src={LinkedInLogo} height={20} width={20} />
+        </Link>
+      </QuickLinks>
       <Fade in={titleVisible} timeout={1000}>
         <HelloTitle variant="h1">
           Hello World, <br />{' '}
