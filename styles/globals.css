@@ -87,6 +87,10 @@ a {
 }
 
 @media screen and (max-width: 720px) {
+  .cardList {
+    justify-content: flex-start;
+  }
+
   .cardList:hover {
     transform: translateX(-50px);
   }
