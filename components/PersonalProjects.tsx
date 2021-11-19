@@ -48,7 +48,7 @@ const PersonalProjectsArea = styled('div')({
 export const PersonalProjects = () => {
   return (
     <PersonalProjectsArea>
-      <Typography variant="h2">My Personal Project Highlights</Typography>
+      <Typography variant="h4">My Personal Project Highlights</Typography>
       <CardList data={data} />
     </PersonalProjectsArea>
   );

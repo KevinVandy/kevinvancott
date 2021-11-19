@@ -84,7 +84,7 @@ const ProfessionalApplicationsArea = styled('div')({
 export const ProfessionalApplications = () => {
   return (
     <ProfessionalApplicationsArea>
-      <Typography variant="h2">Professional Applications I Have Worked On</Typography>
+      <Typography variant="h4">Professional Applications I Have Worked On</Typography>
       <CardList data={data} />
     </ProfessionalApplicationsArea>
   );
