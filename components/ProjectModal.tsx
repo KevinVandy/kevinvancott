@@ -121,7 +121,9 @@ export const ProjectModal: FC<ProjectModalProps> = ({ open, handleClose, project
         </Item>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Close</Button>
+        <Button style={{ color: '#fff' }} onClick={handleClose}>
+          Close
+        </Button>
       </DialogActions>
     </Dialog>
   );

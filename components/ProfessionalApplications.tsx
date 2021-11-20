@@ -50,7 +50,7 @@ const data = [
     name: 'TalentBank',
     link: 'https://core.talentbankonline.com',
     image: TBImage,
-    techStack: ['Grails', 'jQuery', 'Bootstrap', 'MySQL'],
+    techStack: ['Grails', 'Groovy', 'jQuery', 'Bootstrap', 'MySQL'],
   },
   {
     company: 'Talent Plus',
