@@ -1,4 +1,4 @@
-import { Fade, Typography, Link as MuiLink } from '@mui/material';
+import { Fade, Typography, Link as MuiLink, Slide } from '@mui/material';
 import { styled } from '@mui/system';
 import { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
@@ -8,21 +8,47 @@ import GithubLogo from '../public/logos/githubalt.png';
 import WaveBottom from './WaveBottom';
 
 const HeaderContainer = styled('header')({
-  height: '450px',
+  minHeight: '450px',
+  paddingBottom: '6rem',
 });
 
 const HelloTitle = styled(Typography)({
   textAlign: 'center',
-  paddingTop: '3rem',
+  margin: '4rem auto 1rem auto',
   fontSize: '6rem',
-  '@media(max-width: 600px)': {
+  '@media(max-width: 900px)': {
     fontSize: '4rem',
+  },
+  '@media(max-width: 600px)': {
+    fontSize: '3rem',
+  },
+  '@media(max-width: 420px)': {
+    fontSize: '2.5rem',
   },
 });
 
 const JobTitle = styled(Typography)({
   textAlign: 'center',
+  fontSize: '3rem',
+  '@media(max-width: 900px)': {
+    fontSize: '2.25rem',
+  },
+  '@media(max-width: 600px)': {
+    fontSize: '1.75rem',
+  },
+  '@media(max-width: 420px)': {
+    fontSize: '1.5rem',
+  },
+});
+
+const SummaryTypography = styled(Typography)({
+  textAlign: 'center',
   paddingTop: '1rem',
+  display: 'flex',
+  margin: '1rem auto',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '1rem',
 });
 
 const QuickLinks = styled('div')({
@@ -49,10 +75,12 @@ const Link = styled(MuiLink)({
 const Header: FC = () => {
   const [titleVisible, setTitleVisible] = useState(false);
   const [jobTitleVisible, setJobTitleVisible] = useState(false);
+  const [summaryVisible, setSumaryVisible] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setTitleVisible(true), 500);
-    setTimeout(() => setJobTitleVisible(true), 1000);
+    setTimeout(() => setTitleVisible(true), 100);
+    setTimeout(() => setJobTitleVisible(true), 2000);
+    setTimeout(() => setSumaryVisible(true), 2500);
   }, []);
 
   return (
@@ -75,13 +103,33 @@ const Header: FC = () => {
           <Image alt="linkedin" src={LinkedInLogo} height={20} width={20} />
         </Link>
       </QuickLinks>
-      <Fade in={titleVisible} timeout={1000}>
-        <HelloTitle variant="h1">
-          Hello World, <br />{' '}
-          <span
-            style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}
-          >
-            <span style={{ paddingRight: '1rem' }}>I&rsquo;m Kevin</span>
+      <div style={{ display: titleVisible ? 'flex' : 'none' }}>
+        <HelloTitle variant="h1" className="typewriter">
+          Hello&nbsp;World, I&rsquo;m&nbsp;Kevin
+        </HelloTitle>
+      </div>
+      <Fade in={jobTitleVisible} timeout={1000}>
+        <Slide in={jobTitleVisible} direction="left" timeout={1000}>
+          <JobTitle variant="h2">Full Stack Software Engineer</JobTitle>
+        </Slide>
+      </Fade>
+      <Fade in={summaryVisible} timeout={1000}>
+        <Slide in={summaryVisible} direction="left" timeout={1000}>
+          <SummaryTypography variant="h2">
+            <Typography
+              variant="body1"
+              style={{ textAlign: 'center', fontSize: '1.5rem', maxWidth: '26ch' }}
+            >
+              I care about writing{' '}
+              <em>
+                <strong>easy to use</strong>
+              </em>
+              , and{' '}
+              <em>
+                <strong>easy to maintain</strong>
+              </em>{' '}
+              software.
+            </Typography>
             <Image
               alt="profile"
               height={100}
@@ -89,26 +137,8 @@ const Header: FC = () => {
               src={ProfilePic}
               className="avatar"
             />
-            <style jsx global>{`
-              .avatar {
-                border-radius: 50%;
-                border: 2px solid #fff !important;
-                margin-left: 1rem;
-                transition: all 200ms ease-in-out !important;
-              }
-
-              .avatar:hover {
-                border-width: 0 !important;
-                transform: scale(1.01);
-              }
-            `}</style>
-          </span>
-        </HelloTitle>
-      </Fade>
-      <Fade in={jobTitleVisible} timeout={1000}>
-        <JobTitle variantMapping={{ h4: 'h2' }} variant="h4">
-          Full Stack Software Engineer
-        </JobTitle>
+          </SummaryTypography>
+        </Slide>
       </Fade>
       <WaveBottom />
     </HeaderContainer>

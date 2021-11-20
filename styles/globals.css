@@ -31,6 +31,46 @@ a {
   position: relative;
 }
 
+.avatar {
+  border-radius: 50%;
+  border: 2px solid #fff !important;
+  margin-left: 1rem;
+  transition: all 200ms ease-in-out !important;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+.typewriter {
+  overflow: hidden; 
+  border-right: 0.5em solid greenyellow; 
+  white-space: nowrap;
+  animation: typing 3s steps(25, end), blink-caret 0.75s step-end infinite;
+  max-width: 18ch;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: greenyellow;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
 .cardList {
   display: flex;
   justify-content: center;

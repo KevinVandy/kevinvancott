@@ -85,7 +85,7 @@ const SkillGrid = styled('div')({
 
 const SkillTitle = styled(Typography)({
   textAlign: 'center',
-  padding: '1rem',
+  padding: '2rem',
 });
 
 const SkillContainer = styled('div')({
@@ -113,7 +113,7 @@ const Skill: FC<SkillProps> = ({ skill, index }) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setVisible(true), 1 + 500 * Math.sqrt(index + 1));
+    setTimeout(() => setVisible(true), 4000 + 500 * ((index + 1) / 3));
   }, [index]);
 
   return (
@@ -141,11 +141,12 @@ const Skills: FC = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setVisible(true), 500);
+    setTimeout(() => setVisible(true), 3500);
   }, []);
+
   return (
     <SkillsSection>
-      <Fade in={visible} timeout={500}>
+      <Fade in={visible} timeout={1000}>
         <SkillTitle variant="h3">My Skills</SkillTitle>
       </Fade>
       <SkillGrid>

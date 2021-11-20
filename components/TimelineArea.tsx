@@ -247,10 +247,10 @@ export const TimelineArea: FC<any> = () => {
           setTimeout(() => {
             showTimelineCards.push(true);
             setShowTimelineCards([...showTimelineCards]);
-          }, i * 1000);
+          }, i * 2000);
         }
-      }, 1000);
-    }, 3000);
+      }, 2000);
+    }, 9000);
     //eslint-disable-next-line
   }, []);
 

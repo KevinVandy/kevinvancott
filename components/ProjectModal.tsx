@@ -7,6 +7,7 @@ import {
   Button,
   Typography,
   IconButton,
+  Grow,
 } from '@mui/material';
 import Image from 'next/image';
 import { styled } from '@mui/system';
@@ -72,6 +73,8 @@ export const ProjectModal: FC<ProjectModalProps> = ({ open, handleClose, project
           backdropFilter: 'blur(24px)',
         },
       }}
+      TransitionComponent={Grow}
+      TransitionProps={{ timeout: 500 }}
       maxWidth="lg"
       onBackdropClick={handleClose}
       open={open}
