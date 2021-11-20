@@ -118,7 +118,7 @@ const Header: FC = () => {
           <SummaryTypography variant="h2">
             <Typography
               variant="body1"
-              style={{ textAlign: 'center', fontSize: '1.5rem', maxWidth: '26ch' }}
+              style={{ textAlign: 'left', fontSize: '1.5rem', maxWidth: '26ch' }}
             >
               I care about writing{' '}
               <em>

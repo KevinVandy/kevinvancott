@@ -9,12 +9,12 @@ import WaveTop from './WaveTop';
 const ProjectsSection = styled('section')({
   minHeight: '600px',
   position: 'relative',
-  paddingBottom: '2rem',
+  paddingBottom: '3rem',
 });
 
 const Title = styled(Typography)({
   textAlign: 'center',
-  padding: '1rem',
+  paddingTop: '3rem',
 });
 
 const Projects = () => {
