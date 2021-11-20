@@ -11,13 +11,13 @@ const data = [
     name: 'Multi-Monitor Calculator',
     link: 'https://multimonitorcalculator.com/',
     image: MMImage,
-    techStack: ['Svelte', 'Svelte Material UI', 'SASS'],
+    techStack: ['TypeScript', 'Svelte', 'Svelte Material UI', 'SASS'],
   },
   {
     name: 'Portfolio',
     link: 'https://kevinvancott.com/',
     image: POImage,
-    techStack: ['React', 'NextJS', 'Material UI'],
+    techStack: ['TypeScript', 'React', 'NextJS', 'Material UI'],
   },
   {
     name: 'Jeopardy 2019',
