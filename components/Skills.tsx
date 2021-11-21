@@ -113,7 +113,7 @@ const Skill: FC<SkillProps> = ({ skill, index }) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setVisible(true), 4000 + 500 * ((index + 1) / 3));
+    setTimeout(() => setVisible(true), 4000 + 500 * ((index + 1) / 4));
   }, [index]);
 
   return (

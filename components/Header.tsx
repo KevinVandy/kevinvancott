@@ -79,8 +79,8 @@ const Header: FC = () => {
 
   useEffect(() => {
     setTimeout(() => setTitleVisible(true), 100);
-    setTimeout(() => setJobTitleVisible(true), 2000);
-    setTimeout(() => setSumaryVisible(true), 2500);
+    setTimeout(() => setJobTitleVisible(true), 2500);
+    setTimeout(() => setSumaryVisible(true), 3000);
   }, []);
 
   return (
