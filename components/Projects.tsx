@@ -23,9 +23,9 @@ const Projects = () => {
   const [pPVisible, setPPVisible] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setTitleVisible(true), 7000);
-    setTimeout(() => setPAVisible(true), 7500);
-    setTimeout(() => setPPVisible(true), 8000);
+    setTimeout(() => setTitleVisible(true), 6000);
+    setTimeout(() => setPAVisible(true), 6500);
+    setTimeout(() => setPPVisible(true), 7500);
   }, []);
 
   return (
