@@ -16,6 +16,7 @@ import {
   Fade,
   Grow,
   useMediaQuery,
+  Link,
 } from '@mui/material';
 import AlloLogo from '../public/logos/allo.webp';
 import TalentPlusLogo from '../public/logos/talentplus.png';
@@ -115,6 +116,7 @@ const jobs = [
   {
     dateRange: 'December 2020 - Present',
     company: 'ALLO Communications',
+    link: 'https://allocommunications.com/',
     logo: AlloLogo,
     logoHeight: 70,
     logoWidth: 135,
@@ -122,6 +124,7 @@ const jobs = [
     projects: [
       {
         name: 'ALLO Portals',
+        link: 'https://customertest.allofiber.org/get-allo',
         description: 'React Applications with AWS AppSync (GraphQL) APIs',
         techStack: ['AWS', 'TypeScript', 'React', 'GraphQL', 'Python'],
         accomplishments: [
@@ -139,6 +142,7 @@ const jobs = [
   {
     dateRange: 'March 2021 - Present',
     company: 'Nucamp Coding Bootcamp',
+    link: 'https://nucamp.co/community/ne/lincoln',
     logo: NucampLogo,
     logoHeight: 30,
     logoWidth: 135,
@@ -147,14 +151,18 @@ const jobs = [
       {
         name: '',
         description: '',
+        link: '',
         techStack: ['HTML', 'CSS', 'JavaScript', 'React'],
-        accomplishments: ['Teaching HTML, CSS, JavaScript, and React courses on the weekends'],
+        accomplishments: [
+          'Teaching HTML, CSS, JavaScript, and React courses on the weekends',
+        ],
       },
     ],
   },
   {
     dateRange: 'June 2019 - December 2020',
     company: 'Talent Plus, Inc',
+    link: 'https://talentplus.com/',
     logo: TalentPlusLogo,
     logoHeight: 40,
     logoWidth: 180,
@@ -163,7 +171,16 @@ const jobs = [
       {
         name: 'TalentMine',
         description: 'React App with AWS Node.js Lambdas and Grails Microservices',
-        techStack: ['AWS', 'JavaScript', 'React', 'Node.js', 'Groovy', 'Grails'],
+        link: 'https://talentmine.com',
+        techStack: [
+          'JavaScript',
+          'React',
+          'Material UI',
+          'NodeJS',
+          'Grails',
+          'Groovy',
+          'Elasticsearch',
+        ],
         accomplishments: [
           'Created a new heavy lifting back-end processing service to automate integrating up to 100,000 new users at once within a minute to ease new client integrations.',
           'Used Multi-Threading (Thread Pooling) to run computationally expensive groovy backend tasks in parallel that resulted in up to 90% latency improvements.',
@@ -175,7 +192,8 @@ const jobs = [
       {
         name: 'TalentBank',
         description: 'Grails (Groovy) Web Application with Bootstrap and jQuery',
-        techStack: ['Groovy', 'Grails', 'Bootstrap', 'jQuery', 'MySQL'],
+        link: 'https://core.talentbankonline.com',
+        techStack: ['Grails', 'Groovy', 'jQuery', 'Bootstrap', 'MySQL'],
         accomplishments: [
           'Created and maintained Restful APIs in the Grails framework, using GORM and SQL.',
           'Added new front-end features using Groovy Server Pages, Bootstrap, and jQuery.',
@@ -184,6 +202,7 @@ const jobs = [
       {
         name: 'Formation-UI',
         description: 'React Component Library with Storybook',
+        link: 'https://test-formation-ui.netlify.app',
         techStack: ['JavaScript', 'React', 'Material UI', 'Storybook'],
         accomplishments: [
           'Led a new initiative to revamp the front-end development process to focus on code reusability, consistency, accessibility, and to implement an official design system to unify UI/UX between all React applications.',
@@ -196,6 +215,7 @@ const jobs = [
   {
     dateRange: 'January - June 2019',
     company: 'State of Nebraska',
+    link: 'https://dhhs.ne.gov/',
     logo: NebraskaLogo,
     logoHeight: 50,
     logoWidth: 150,
@@ -204,7 +224,8 @@ const jobs = [
       {
         name: 'ICHARTS',
         description: 'Java Web Application',
-        techStack: ['React', 'Redux', 'Node', 'Express', 'MongoDB'],
+        link: 'https://dhhs-icharts1.ne.gov/iCharts/',
+        techStack: ['Java', 'jQuery', 'Tomahawk', 'COBOL', 'DB2'],
         accomplishments: [
           'Upgraded web application from Java 5 to Java 8 and the front-end PrimeFaces libraries.',
           'Refactored the back-end code structure to follow a modern MVC pattern.',
@@ -213,7 +234,8 @@ const jobs = [
       {
         name: 'RMNPA',
         description: 'Java Web Application',
-        techStack: ['React', 'Redux', 'Node', 'Express', 'MongoDB'],
+        link: 'https://dhhs-rmnpa.ne.gov/RMNPAApp/',
+        techStack: ['Java', 'jQuery', 'PrimeFaces', 'COBOL', 'DB2'],
         accomplishments: [
           'Upgraded PDF Generation with Jasper Reports and added new data fields.',
         ],
@@ -223,12 +245,33 @@ const jobs = [
   {
     dateRange: '2017 - 2019',
     company: 'Southeast Community College',
+    link: 'https://www.southeast.edu/computerinformation/',
     title: 'Associate’s, Computer Information Technology',
-    projects: [],
+    projects: [
+      {
+        name: '',
+        link: '',
+        description: '',
+        techStack: [
+          'Java',
+          'C#.NET',
+          'JavaScript',
+          'PHP',
+          'SQL',
+          'Visual Basic',
+          'COBOL',
+          'Matlab',
+        ],
+        accomplishments: [
+          'Teaching HTML, CSS, JavaScript, and React courses on the weekends',
+        ],
+      },
+    ],
   },
   {
     dateRange: '2015 - 2017',
     company: 'University of Nebraska - Lincoln',
+    link: 'https://www.unl.edu/',
     title: 'Undecided Engineering Student',
     projects: [],
   },
@@ -273,17 +316,24 @@ export const TimelineArea: FC<any> = () => {
               </TimelineSeparator>
               <TimelineContent>
                 <TimelineCard show={showTimelineCards.length > jobIndex}>
-                  {job.logo && (
-                    <CompanyLogoWrapper>
-                      <Image
-                        alt="company logo"
-                        src={job.logo}
-                        height={job.logoHeight}
-                        width={job.logoWidth}
-                      />
-                    </CompanyLogoWrapper>
-                  )}
-                  <CompanyName variant="h3">{job.company}</CompanyName>
+                  <Link
+                    href={job?.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                  >
+                    {job.logo && (
+                      <CompanyLogoWrapper>
+                        <Image
+                          alt="company logo"
+                          src={job.logo}
+                          height={job.logoHeight}
+                          width={job.logoWidth}
+                        />
+                      </CompanyLogoWrapper>
+                    )}
+                    <CompanyName variant="h3">{job.company}</CompanyName>{' '}
+                  </Link>
                   <JobTitle variant="h4">{job.title}</JobTitle>
                   <IndentedList>
                     {job?.projects?.map?.((project, projectIndex) => (
@@ -291,7 +341,17 @@ export const TimelineArea: FC<any> = () => {
                         <Typography variant="h5">
                           {project.name && (
                             <>
-                              {project.name}
+                              <Link
+                                href={project?.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                  textDecoration: 'none',
+                                  color: 'rgb(131, 192, 252)',
+                                }}
+                              >
+                                {project.name}
+                              </Link>
                               {project.description && (
                                 <>
                                   {' - '}
