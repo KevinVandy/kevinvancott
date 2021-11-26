@@ -68,9 +68,9 @@ export const ProjectModal: FC<ProjectModalProps> = ({ open, handleClose, project
     <Dialog
       PaperProps={{
         style: {
-          backgroundColor: 'rgba(33,33,33,.8)',
+          backgroundColor: 'rgba(33,33,33,.9)',
           color: '#fff',
-          backdropFilter: 'blur(24px)',
+          backdropFilter: 'blur(12px)',
         },
       }}
       TransitionComponent={Grow}
