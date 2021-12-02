@@ -249,9 +249,9 @@ const jobs = [
     title: 'Associate’s, Computer Information Technology',
     projects: [
       {
-        name: '',
-        link: '',
-        description: '',
+        name: 'Associate’s in Computer Information Technology',
+        link: 'https://www.southeast.edu/computerinformation/',
+        description: 'with a focus on PC and Web Development',
         techStack: [
           'Java',
           'C#.NET',
@@ -263,7 +263,7 @@ const jobs = [
           'Matlab',
         ],
         accomplishments: [
-          'Teaching HTML, CSS, JavaScript, and React courses on the weekends',
+          'Object-Oriented Programming skills for building desktop, web and mainframe applications using Java, C#.NET, Visual Basic.NET, PHP, JavaScript, SQL, HTML, CSS, and core Object-Oriented concepts for Agile Development in PC and Web Applications.',
         ],
       },
     ],
