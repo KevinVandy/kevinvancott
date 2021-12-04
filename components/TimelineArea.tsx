@@ -358,7 +358,6 @@ export const TimelineArea: FC<any> = () => {
                                   <i style={{ fontSize: '0.8em' }}>
                                     {project?.description}
                                   </i>
-                                  )
                                 </>
                               )}
                             </>
