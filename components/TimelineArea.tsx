@@ -154,7 +154,9 @@ const jobs = [
         link: '',
         techStack: ['HTML', 'CSS', 'JavaScript', 'React'],
         accomplishments: [
-          'Teaching HTML, CSS, JavaScript, and React courses on the weekends',
+          'Teaching weekend online workshops for HTML, CSS, JavaScript, Bootstrap, and React.',
+          'Helping students create their first portfolio websites with React and Bootstrap.',
+          'Mentoring and advising students as they apply to their first software jobs.',
         ],
       },
     ],
