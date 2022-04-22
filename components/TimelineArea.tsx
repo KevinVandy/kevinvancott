@@ -19,6 +19,7 @@ import {
   Link,
 } from '@mui/material';
 import AlloLogo from '../public/logos/allo.webp';
+import FusionLogo from '../public/logos/fusion.svg';
 import TalentPlusLogo from '../public/logos/talentplus.png';
 import NebraskaLogo from '../public/logos/nebraskadhhs.png';
 import NucampLogo from '../public/logos/nucamp.svg';
@@ -114,7 +115,25 @@ const JobTitle = styled(Typography)({
 
 const jobs = [
   {
-    dateRange: 'December 2020 - Present',
+    dateRange: 'Jan 2022 - Present',
+    company: 'Fusion Medical Staffing',
+    link: 'https://fusionmedstaff.com/',
+    logo: FusionLogo,
+    logoHeight: 70,
+    logoWidth: 135,
+    title: 'Senior Frontend Developer',
+    projects: [
+      {
+        name: 'Fusion Marketplace',
+        link: 'https://fusionmarketplace.com/',
+        description: 'React Next.js Application with C#.NET Core backends',
+        techStack: ['Azure', 'TypeScript', 'React', 'Next.js', 'C#.NET'],
+        accomplishments: [],
+      },
+    ],
+  },
+  {
+    dateRange: 'Dec 2020 - ~March 2022',
     company: 'ALLO Communications',
     link: 'https://allocommunications.com/',
     logo: AlloLogo,
@@ -124,7 +143,7 @@ const jobs = [
     projects: [
       {
         name: 'ALLO Portals',
-        link: 'https://customertest.allofiber.org/get-allo',
+        link: 'https://customer.allofiber.org/get-allo',
         description: 'React Applications with AWS AppSync (GraphQL) APIs',
         techStack: ['AWS', 'TypeScript', 'React', 'GraphQL', 'Python'],
         accomplishments: [
@@ -140,7 +159,7 @@ const jobs = [
     ],
   },
   {
-    dateRange: 'March 2021 - Present',
+    dateRange: 'March 2021 - Dec 2021',
     company: 'Nucamp Coding Bootcamp',
     link: 'https://nucamp.co/community/ne/lincoln',
     logo: NucampLogo,
@@ -295,14 +314,14 @@ export const TimelineArea: FC<any> = () => {
           }, i * 1000);
         }
       }, 1000);
-    }, 8000);
+    }, 6000);
     //eslint-disable-next-line
   }, []);
 
   return (
     <TimelineSection className="background-vertical">
       <WaveTop />
-      <Title variant="h3">What I&rsquo;ve Done</Title>
+      <Title variant="h3">Where I&rsquo;ve Been</Title>
       <Fade in={showTimeline} timeout={2000}>
         <StyledTimeline position="right">
           {jobs.map((job, jobIndex) => (

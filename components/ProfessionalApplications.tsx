@@ -7,8 +7,25 @@ import ICImage from '../public/apps/ic.webp';
 import RAImage from '../public/apps/ra.webp';
 import CPImage from '../public/apps/cp.png';
 import APImage from '../public/apps/ap.png';
+import FMImage from '../public/apps/fm.png';
 
 const data = [
+  {
+    company: 'Fusion Medical Staffing',
+    name: 'Fusion Marketplace',
+    link: 'https://fusionmarketplace.com/',
+    image: FMImage,
+    techStack: [
+      'Turborepo',
+      'TypeScript',
+      'React',
+      'NextJS',
+      'Material UI',
+      'Storybook',
+      'C#.NET',
+      'SQL Server',
+    ],
+  },
   {
     company: 'ALLO',
     name: 'Agent Portal',
@@ -18,7 +35,7 @@ const data = [
   {
     company: 'ALLO',
     name: 'Customer Portal',
-    link: 'https://customertest.allofiber.org/get-allo',
+    link: 'https://customer.allofiber.org/get-allo',
     image: CPImage,
     techStack: [
       'Nx',

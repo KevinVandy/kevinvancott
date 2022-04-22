@@ -6,6 +6,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
+        {/*eslint-disable-next-line @next/next/no-page-custom-font*/}
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -14,10 +15,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           rel="stylesheet"
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
         />
-        <title>Kevin Van Cott - Software Engineer</title>
+        <title>Kevin Van Cott - Senior Software Engineer</title>
         <meta
           name="description"
-          content="Kevin Van Cott is a full stack software engineer based in Nebraska. He specializes in building web applications using React, Svelte, and Groovy."
+          content="Kevin Van Cott is a Full Stack Senior Software Engineer and Open Source Maintainer based in Nebraska. He specializes in building web applications using React, Svelte, and Groovy."
         />
         <meta property="og:image" content="/profile.jpg"></meta>
       </Head>

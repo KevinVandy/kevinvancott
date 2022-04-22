@@ -79,8 +79,8 @@ const Header: FC = () => {
 
   useEffect(() => {
     setTimeout(() => setTitleVisible(true), 100);
-    setTimeout(() => setJobTitleVisible(true), 2000);
-    setTimeout(() => setSumaryVisible(true), 2500);
+    setTimeout(() => setJobTitleVisible(true), 1000);
+    setTimeout(() => setSumaryVisible(true), 1500);
   }, []);
 
   return (
@@ -110,7 +110,13 @@ const Header: FC = () => {
       </div>
       <Fade in={jobTitleVisible} timeout={1000}>
         <Slide in={jobTitleVisible} direction="left" timeout={1000}>
-          <JobTitle variant="h2">Full Stack Software Engineer</JobTitle>
+          <div>
+            <JobTitle variant="h2">Senior Software Engineer</JobTitle>
+            <JobTitle sx={{ fontSize: '1.8em', lineHeight: '3rem' }} variant="h2">
+              {' '}
+              Open Source Maintainer and Contributor
+            </JobTitle>
+          </div>
         </Slide>
       </Fade>
       <Fade in={summaryVisible} timeout={1000}>
