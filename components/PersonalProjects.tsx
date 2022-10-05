@@ -5,8 +5,15 @@ import JEImage from '../public/apps/je.webp';
 import WWImage from '../public/apps/ww.webp';
 import POImage from '../public/apps/po.png';
 import UPImage from '../public/apps/up.webp';
+import MRTImage from '../public/apps/mrt.png';
 
 const data = [
+  {
+    name: 'Material React Table',
+    link: 'https://material-react-table.com',
+    image: MRTImage,
+    techStack: ['TypeScript', 'React', 'NextJS', 'Material UI', 'Storybook'],
+  },
   {
     name: 'Multi-Monitor Calculator',
     link: 'https://multimonitorcalculator.com/',

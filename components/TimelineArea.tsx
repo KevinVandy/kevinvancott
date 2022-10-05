@@ -128,7 +128,10 @@ const jobs = [
         link: 'https://fusionmarketplace.com/',
         description: 'React Next.js Application with C#.NET Core backends',
         techStack: ['Azure', 'TypeScript', 'React', 'Next.js', 'C#.NET'],
-        accomplishments: [],
+        accomplishments: [
+          'Improved SEO by strategically adding structured data for Google rich results for FAQs, job postings, estimated salaries, etc. to improve site search ranking and engagement.',
+          'Collaborated with team to move towards full CI/CD by simplifying the git branching strategy, implementing feature flags, and better automating deployment pipelines.',
+        ],
       },
     ],
   },
@@ -147,10 +150,9 @@ const jobs = [
         description: 'React Applications with AWS AppSync (GraphQL) APIs',
         techStack: ['AWS', 'TypeScript', 'React', 'GraphQL', 'Python'],
         accomplishments: [
-          'Architected and re-organized all front-end code into a monorepo structure with Nx to improve code reusability across multiple react applications, and to increase feature delivery speed and quality.',
+          'Architected and re-organized all frontend code into a monorepo structure with Nx to improve code reusability and compatibility across multiple react applications',
           'Designed and developed a new customer portal to sell services to customers.',
           'Built a new admin portal for internal use to manage orders and provide admin tools.',
-          'Worked directly with stakeholders to gather requirements and demo new features.',
           'Established unit and end-to-end testing systems with Jest, Cypress, and Postman.',
           'Automated AWS S3 deployment, testing, and security audits with Gitlab Pipelines.',
           'Mentored and pair programmed with other developers to teach best practices, clean code patters, accessibility, and Test-Driven Development (TDD) mindsets.',
@@ -229,6 +231,14 @@ const jobs = [
           'Led a new initiative to revamp the front-end development process to focus on code reusability, consistency, accessibility, and to implement an official design system to unify UI/UX between all React applications.',
           'Set up TypeScript, Rollup, Webpack, Babel, and other JS package configurations.',
           'Created reusable React components following React’s Composition and Common Abstraction principles and generated thorough documentation with Storybook.',
+        ],
+      },
+      {
+        name: 'Deepgram Transcription Client',
+        description: 'React App with AWS Lambda Node.js APIs',
+        techStack: ['TypeScript', 'React', 'Material UI'],
+        accomplishments: [
+          'Created a new app that integrated with Deepgram automated AI voice recognition to automate recording and transcribing job interviews to enable transcriptionists to quickly correct any inaccuracies before evaluating and grading interviews.',
         ],
       },
     ],
