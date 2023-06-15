@@ -1,7 +1,7 @@
 import React, { useState, FC } from 'react';
 import { styled, Typography, Card } from '@mui/material';
 import { ProjectModal } from './ProjectModal';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 
 const CardListSection = styled('div')({
   display: 'block',

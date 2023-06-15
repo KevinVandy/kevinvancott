@@ -9,7 +9,7 @@ import {
   IconButton,
   Grow,
 } from '@mui/material';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { styled } from '@mui/system';
 import { skillImgs } from './Skills';
 import CloseIcon from '@mui/icons-material/Close';
@@ -76,7 +76,7 @@ export const ProjectModal: FC<ProjectModalProps> = ({ open, handleClose, project
       TransitionComponent={Grow}
       TransitionProps={{ timeout: 500 }}
       maxWidth="lg"
-      onBackdropClick={handleClose}
+      onClose={handleClose}
       open={open}
     >
       <IconButton
@@ -117,7 +117,7 @@ export const ProjectModal: FC<ProjectModalProps> = ({ open, handleClose, project
                 </SkillContainer>
               ))}
           </SkillGrid>
-          <Image src={project.image} alt={project.name} loading="lazy" />
+          <Image src={project.image} alt={project.name} loading="lazy"  />
         </Item>
       </DialogContent>
       <DialogActions>

@@ -23,6 +23,7 @@ import FusionLogo from '../public/logos/fusion.svg';
 import TalentPlusLogo from '../public/logos/talentplus.png';
 import NebraskaLogo from '../public/logos/nebraskadhhs.png';
 import NucampLogo from '../public/logos/nucamp.svg';
+import ManifestLogo from '../public/logos/mc.jpg';
 import WaveTop from './WaveTop';
 
 const TimelineSection = styled('section')({
@@ -115,7 +116,25 @@ const JobTitle = styled(Typography)({
 
 const jobs = [
   {
-    dateRange: 'Jan 2022 - Present',
+    dateRange: 'Feb 2023 - Present',
+    company: 'Manifest Cyber',
+    link: 'https://manifestcyber.com/',
+    logo: ManifestLogo,
+    logoHeight: 100,
+    logoWidth: 100,
+    title: 'Senior Software Engineer',
+    projects: [
+      {
+        name: 'Manifest Cyber App',
+        link: 'https://app.manifestcyber.com/',
+        description: 'React Dashboard',
+        techStack: ['AWS', 'TypeScript', 'React'],
+        accomplishments: [],
+      },
+    ],
+  },
+  {
+    dateRange: 'Jan 2022 - Feb 2023',
     company: 'Fusion Medical Staffing',
     link: 'https://fusionmedstaff.com/',
     logo: FusionLogo,

@@ -6,8 +6,15 @@ import WWImage from '../public/apps/ww.webp';
 import POImage from '../public/apps/po.png';
 import UPImage from '../public/apps/up.webp';
 import MRTImage from '../public/apps/mrt.png';
+import MRT2Image from '../public/apps/mrt2.png';
 
 const data = [
+  {
+    name: 'Mantine React Table',
+    link: 'https://mantine-react-table.com',
+    image: MRT2Image,
+    techStack: ['TypeScript', 'React', 'NextJS', 'Mantine', 'Storybook'],
+  },
   {
     name: 'Material React Table',
     link: 'https://material-react-table.com',
