@@ -1,34 +1,92 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dante - Astro & Tailwind CSS Theme by justgoodui.com
 
-## Getting Started
+Dante is a single-author blog and portfolio theme for Astro.js. Featuring a minimal, slick, responsive and content-focused design. For more Astro.js themes please check [justgoodui.com](https://justgoodui.com/).
 
-First, run the development server:
+![Dante Astro.js Theme](public/dante-preview.jpg)
 
-```bash
-npm run dev
-# or
-yarn dev
+[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JustGoodUI/dante-astro-theme)
+
+If you click this☝️ button, it will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify.
+
+## Theme Features:
+
+- ✅ Dark and light color mode
+- ✅ Hero section with bio
+- ✅ Portfolio collection
+- ✅ Pagination support
+- ✅ Post tags support
+- ✅ Subscription form
+- ✅ View transitions
+- ✅ Tailwind CSS
+- ✅ Mobile-first responsive layout
+- ✅ SEO-friendly with canonical URLs and OpenGraph data
+- ✅ Sitemap support
+- ✅ RSS Feed support
+- ✅ Markdown & MDX support
+
+## Template Integrations
+
+- @astrojs/tailwind - https://docs.astro.build/en/guides/integrations-guide/tailwind/
+- @astrojs/sitemap - https://docs.astro.build/en/guides/integrations-guide/sitemap/
+- @astrojs/mdx - https://docs.astro.build/en/guides/markdown-content/
+- @astrojs/rss - https://docs.astro.build/en/guides/rss/
+
+## Project Structure
+
+Inside of Dante Astro theme, you'll see the following folders and files:
+
+```text
+├── public/
+├── src/
+│   ├── components/
+│   ├── content/
+│   ├── data/
+│   ├── icons/
+│   ├── layouts/
+│   ├── pages/
+│   ├── styles/
+│   └── utils/
+├── astro.config.mjs
+├── package.json
+├── README.md
+├── tailwind.config.cjs
+└── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+There's nothing special about `src/components/`, but that's where we like to put any Astro (`.astro`) components.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Any static assets, like images, can be placed in the `public/` directory.
 
-## Learn More
+## Astro.js Commands
 
-To learn more about Next.js, take a look at the following resources:
+All commands are run from the root of the project, from a terminal:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Want to learn more about Astro.js?
 
-## Deploy on Vercel
+Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Credits
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Demo content generate with [Chat GPT](https://chat.openai.com/)
+- Images for demo content from [Unsplash](https://unsplash.com/)
+
+## Astro Themes by Just Good UI
+
+- [Ovidius](https://github.com/JustGoodUI/ovidius-astro-theme) is a free single author blog theme.
+
+## License
+
+Licensed under the [GPL-3.0](https://github.com/JustGoodUI/dante-astro-theme/blob/main/LICENSE) license.
