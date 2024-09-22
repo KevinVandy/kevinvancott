@@ -14,7 +14,7 @@ seo:
 
 ![Light straight lines](/post-10.jpg)
 
-**Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
+**Note:** This post was created using Chat GPT to demonstrate the features of the _[Kevin Astro.js theme functionality](https://justgoodui.com/astro-themes/kevin/)_.
 
 In the ever-evolving landscape of content management systems (CMS), a new player has been gaining significant traction - the headless CMS. This innovative approach to content management is reshaping the way businesses deliver content across various digital channels. Let's delve into the rise of **headless CMS** and what you need to know about this transformative technology.
 

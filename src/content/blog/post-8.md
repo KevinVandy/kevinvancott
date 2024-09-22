@@ -14,7 +14,7 @@ seo:
 
 ![Light lines on a dark background](/post-8.jpg)
 
-**Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
+**Note:** This post was created using Chat GPT to demonstrate the features of the _[Kevin Astro.js theme functionality](https://justgoodui.com/astro-themes/kevin/)_.
 
 CSS, the styling powerhouse of the web, is constantly evolving to meet the demands of modern web development. In the ever-expanding landscape of front-end technologies, staying abreast of the latest CSS features is crucial for creating sleek, responsive, and visually stunning websites. Let's take a deep dive into some of the most exciting and powerful CSS features that have emerged in recent times.
 

@@ -13,7 +13,7 @@ seo:
 
 ![Mountains](/post-9.jpg)
 
-**Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
+**Note:** This post was created using Chat GPT to demonstrate the features of the _[Kevin Astro.js theme functionality](https://justgoodui.com/astro-themes/kevin/)_.
 
 In an age where instant gratification is the norm, website performance is paramount. Slow-loading websites can frustrate users, affect search engine rankings, and ultimately lead to loss of traffic and revenue. Front-end optimization is the key to ensuring a fast, responsive, and user-friendly website. In this post, we'll explore some essential front-end techniques for optimizing website performance.
 

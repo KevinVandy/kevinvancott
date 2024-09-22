@@ -12,7 +12,7 @@ seo:
 
 ![A person standing at the window](/post-1.jpg)
 
-**Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
+**Note:** This post was created using Chat GPT to demonstrate the features of the _[Kevin Astro.js theme functionality](https://justgoodui.com/astro-themes/kevin/)_.
 
 In recent years, the way we work has undergone a significant transformation, largely due to advancements in technology and changing attitudes toward work-life balance. One of the most notable changes has been the rise of remote work, allowing employees to work from the comfort of their own homes. While this shift has brought about many benefits, it has also introduced its fair share of challenges. Let's explore the advantages and disadvantages of working from home.
 

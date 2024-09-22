@@ -14,7 +14,7 @@ seo:
 
 ![Wind turbine](/post-12.jpg)
 
-**Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
+**Note:** This post was created using Chat GPT to demonstrate the features of the _[Kevin Astro.js theme functionality](https://justgoodui.com/astro-themes/kevin/)_.
 
 In the ever-evolving world of web development, staying on top of the latest trends and tools is essential. One such tool that has gained immense popularity in recent years is Tailwind CSS. Tailwind CSS is not just another CSS framework; it's a utility-first framework that revolutionizes the way developers write and manage their styles. In this post, we'll explore the ins and outs of Tailwind CSS and why it's a game-changer for modern web development.
 

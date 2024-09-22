@@ -1,10 +1,10 @@
-# Dante - Astro & Tailwind CSS Theme by justgoodui.com
+# Kevin - Astro & Tailwind CSS Theme by justgoodui.com
 
-Dante is a single-author blog and portfolio theme for Astro.js. Featuring a minimal, slick, responsive and content-focused design. For more Astro.js themes please check [justgoodui.com](https://justgoodui.com/).
+Kevin is a single-author blog and portfolio theme for Astro.js. Featuring a minimal, slick, responsive and content-focused design. For more Astro.js themes please check [justgoodui.com](https://justgoodui.com/).
 
-![Dante Astro.js Theme](public/dante-preview.jpg)
+![Kevin Astro.js Theme](public/kevin-preview.jpg)
 
-[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JustGoodUI/dante-astro-theme)
+[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JustGoodUI/kevin-astro-theme)
 
 If you click this☝️ button, it will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify.
 
@@ -33,7 +33,7 @@ If you click this☝️ button, it will create a new repo for you that looks exa
 
 ## Project Structure
 
-Inside of Dante Astro theme, you'll see the following folders and files:
+Inside of Kevin Astro theme, you'll see the following folders and files:
 
 ```text
 ├── public/
@@ -89,4 +89,4 @@ Check out [our documentation](https://docs.astro.build) or jump into our [Discor
 
 ## License
 
-Licensed under the [GPL-3.0](https://github.com/JustGoodUI/dante-astro-theme/blob/main/LICENSE) license.
+Licensed under the [GPL-3.0](https://github.com/JustGoodUI/kevin-astro-theme/blob/main/LICENSE) license.
