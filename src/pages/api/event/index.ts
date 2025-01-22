@@ -1,13 +1,13 @@
-import type { APIRoute } from "astro";
+import type { APIRoute } from 'astro';
 
 export const POST: APIRoute = async ({ request }) => {
 	const body = await request.text();
 
-	const response = await fetch("https://plausible.io/api/event", {
+	const response = await fetch('https://plausible.io/api/event', {
 		body: body,
-		method: "POST",
+		method: 'POST',
 		headers: {
-			"Content-Type": "application/json",
+			'Content-Type': 'application/json',
 		},
 	});
 

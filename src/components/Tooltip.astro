@@ -1,0 +1,42 @@
+---
+interface Props {
+	text?: string;
+}
+
+const { text } = Astro.props;
+---
+
+<div class="relative inline-block">
+	<slot />
+	{
+		text && (
+			<span class="tooltip pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 transform rounded bg-gray-800 px-2 py-1 text-xs text-white opacity-0 transition-opacity duration-300 dark:bg-white dark:text-gray-800">
+				{text}
+			</span>
+		)
+	}
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const tooltipWrappers = document.querySelectorAll('.relative.inline-block');
+
+		tooltipWrappers.forEach((wrapper) => {
+			const tooltip = wrapper.querySelector('.tooltip') as HTMLElement;
+			if (!tooltip) return;
+
+			const showTooltip = () => {
+				tooltip.style.opacity = '1';
+			};
+
+			const hideTooltip = () => {
+				tooltip.style.opacity = '0';
+			};
+
+			wrapper.addEventListener('mouseenter', showTooltip);
+			wrapper.addEventListener('mouseleave', hideTooltip);
+			wrapper.addEventListener('focus', showTooltip);
+			wrapper.addEventListener('blur', hideTooltip);
+		});
+	});
+</script>
