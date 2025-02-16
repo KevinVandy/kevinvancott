@@ -41,4 +41,29 @@ const projects = defineCollection({
 	}),
 });
 
-export const collections = { blog, pages, projects };
+const projectSchema = z.object({
+	name: z.string(),
+	link: z.string(),
+	description: z.string(),
+	techStack: z.array(z.string()),
+	accomplishments: z.array(z.string()),
+});
+
+const timeline = defineCollection({
+	schema: z.object({
+		jobs: z.array(
+			z.object({
+				dateRange: z.string(),
+				company: z.string(),
+				link: z.string(),
+				logo: z.string(),
+				logoHeight: z.number(),
+				logoWidth: z.number(),
+				title: z.string(),
+				projects: z.array(projectSchema),
+			}),
+		),
+	}),
+});
+
+export const collections = { blog, pages, projects, timeline };
