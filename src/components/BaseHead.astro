@@ -9,7 +9,11 @@ export type Props = {
 	pageType?: 'website' | 'article';
 };
 
-const { description = '', image = siteConfig.image, pageType = 'website' } = Astro.props;
+const {
+	description = 'Kevin Van Cott is a software engineer with a passion for building web applications. This is his personal website.',
+	image = siteConfig.image,
+	pageType = 'website',
+} = Astro.props;
 const title = [Astro.props.title, siteConfig.title].filter(Boolean).join(' | ');
 const resolvedImage = image?.src
 	? {
