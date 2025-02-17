@@ -1,6 +1,5 @@
 ---
 import { fade } from 'astro:transitions';
-import Tooltip from './Tooltip.astro';
 
 interface Project {
 	name: string;
@@ -22,40 +21,6 @@ interface Props {
 }
 
 const { dateRange, company, link, logo, logoHeight, logoWidth, title, projects } = Astro.props;
-
-function lookupLogo(tech: string): string {
-	const logoMap: { [key: string]: string } = {
-		HTML: '/logos/html.png',
-		CSS: '/logos/css.png',
-		JavaScript: '/logos/javascript.png',
-		TypeScript: '/logos/typescript.png',
-		React: '/logos/react.png',
-		Svelte: '/logos/svelte.png',
-		Java: '/logos/java.png',
-		Groovy: '/logos/groovy.png',
-		'C#': '/logos/csharp.png',
-		'C#.NET': '/logos/csharp.png',
-		Grails: '/logos/grails.png',
-		Nx: '/logos/nx.png',
-		Elasticsearch: '/logos/elasticsearch.png',
-		Storybook: '/logos/storybook.png',
-		Cypress: '/logos/cypress.jpg',
-		MySQL: '/logos/mysql.png',
-		NodeJS: '/logos/nodejs.png',
-		jQuery: '/logos/jquery.png',
-		Python: '/logos/python.png',
-		'Material UI': '/logos/mui.png',
-		PHP: '/logos/php.png',
-		Bootstrap: '/logos/bootstrap.png',
-		SMUI: '/logos/smui.png',
-		GraphQL: '/logos/graphql.png',
-		AWS: '/logos/aws.png',
-		'Next.js': '/logos/nextjs.png',
-		SASS: '/logos/sass.png',
-	};
-
-	return logoMap[tech] || '';
-}
 ---
 
 <div transition:name={`timeline-entry-${company}`} transition:animate={fade({ duration: 1 })}>
@@ -115,18 +80,11 @@ function lookupLogo(tech: string): string {
 							<div>
 								<h4 class="mb-2 font-medium text-slate-700 dark:text-slate-300">Tech Stack</h4>
 								<div class="flex flex-wrap gap-2">
-									{project.techStack.map((tech) => {
-										const logoSrc = lookupLogo(tech);
-										return (
-											logoSrc && (
-												<Tooltip text={tech}>
-													<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-white p-1 shadow-sm dark:bg-slate-700">
-														<img src={logoSrc} alt={`${tech} logo`} class="h-6 w-6 object-contain" />
-													</div>
-												</Tooltip>
-											)
-										);
-									})}
+									{project.techStack.map((tech) => (
+										<div class="rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-300">
+											{tech}
+										</div>
+									))}
 								</div>
 							</div>
 

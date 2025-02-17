@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import siteConfig from '../../data/site-config';
-import TimelineEntry from '../../components/TimelineEntry.astro';
+import Company from '../../components/Company.astro';
 
 export async function getStaticPaths() {
 	return (siteConfig.jobs ?? []).map((job) => ({
@@ -24,7 +24,8 @@ if (!job) {
 	image={{ src: '/dante-preview.jpg', alt: 'The preview of the site' }}
 	showHeader={false}
 >
-	<TimelineEntry
+	<article class="mb-16 sm:mb-24"></article>
+	<Company
 		dateRange={job.dateRange}
 		company={job.company}
 		link={job.link}

@@ -1,12 +1,12 @@
 ---
 import siteConfig from '../data/site-config';
-import TimelineItemSimple from './TimelineItemSimple.astro';
+import TimelineItem from './TimelineItem.astro';
 ---
 
 <div class="-my-6">
 	{
 		siteConfig.jobs?.map((job, index) => (
-			<TimelineItemSimple
+			<TimelineItem
 				dateRange={job.dateRange}
 				company={job.company}
 				logo={job.logo}

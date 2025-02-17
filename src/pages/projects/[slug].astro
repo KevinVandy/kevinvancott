@@ -1,55 +1,80 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ProjectPreview from '../../components/ProjectPreview.astro';
-import { sortItemsByDateDesc } from '../../utils/data-utils';
+import siteConfig from '../../data/site-config';
 
 export async function getStaticPaths() {
-	const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
-	const projectCount = projects.length;
-	return projects.map((project, index) => ({
-		params: { slug: project.slug },
-		props: {
-			project,
-			prevProject: index + 1 !== projectCount ? projects[index + 1] : null,
-			nextProject: index !== 0 ? projects[index - 1] : null,
-		},
+	const projects =
+		siteConfig.jobs?.flatMap((job) => job.projects).filter((project) => project.name && project.description) || [];
+	return projects.map((project) => ({
+		params: { slug: project.name.toLowerCase().replace(/\s+/g, '-') },
+		props: { project },
 	}));
 }
 
-type Props = {
-	project: CollectionEntry<'projects'>;
-	prevProject: CollectionEntry<'projects'>;
-	nextProject: CollectionEntry<'projects'>;
-};
+const projectName = Astro.params.slug.replace(/-/g, ' ').toLowerCase();
+const project = siteConfig.jobs
+	?.flatMap((job) => job.projects)
+	.find((project) => project.name.toLowerCase() === projectName);
 
-const { project, prevProject, nextProject } = Astro.props;
-const { title, description, seo } = project.data;
-const { Content } = await project.render();
+if (!project) {
+	throw new Error(`Project not found: ${projectName}`);
+}
+
+const { name, description, link, techStack, accomplishments } = project;
 ---
 
-<BaseLayout
-	title={seo?.title ?? title}
-	description={seo?.description ?? description}
-	image={seo?.image}
-	pageType="article"
-	showHeader={false}
->
+<BaseLayout pageType="article" showHeader={false}>
 	<article class="mb-16 sm:mb-24">
-		<header class="mb-8">
-			<h1 class="font-serif text-3xl font-medium leading-tight sm:text-5xl sm:leading-tight">{title}</h1>
+		<header class="mb-8 text-center">
+			<h1 class="mb-4 font-serif text-3xl italic leading-tight sm:text-4xl">{name}</h1>
+			<p class="mx-auto max-w-2xl text-lg text-slate-600 dark:text-slate-400">{description}</p>
 		</header>
-		<div class="prose prose-kevin max-w-none sm:prose-lg">
-			<Content />
+
+		<div class="mx-auto max-w-3xl">
+			{
+				link && (
+					<div class="mb-8 text-center">
+						<a
+							href={link}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center rounded-full bg-indigo-500 px-6 py-2 text-white transition-colors hover:bg-indigo-600 dark:bg-indigo-400 dark:hover:bg-indigo-500"
+						>
+							View Project
+							<svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+								<path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+								<path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+							</svg>
+						</a>
+					</div>
+				)
+			}
+
+			<div class="mb-12">
+				<h2 class="mb-4 text-xl font-semibold">Technologies Used</h2>
+				<div class="flex flex-wrap gap-2">
+					{
+						techStack.map((tech) => (
+							<span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+								{tech}
+							</span>
+						))
+					}
+				</div>
+			</div>
+
+			{
+				accomplishments && accomplishments.length > 0 && (
+					<div>
+						<h2 class="mb-4 text-xl font-semibold">Key Accomplishments</h2>
+						<ul class="list-inside list-disc space-y-2 text-slate-600 dark:text-slate-400">
+							{accomplishments.map((accomplishment) => (
+								<li>{accomplishment}</li>
+							))}
+						</ul>
+					</div>
+				)
+			}
 		</div>
 	</article>
-	{
-		(prevProject || nextProject) && (
-			<div class="my-16 sm:my-24">
-				<h2 class="mb-12 font-serif text-xl italic sm:mb-16 sm:text-2xl">View Next</h2>
-				{nextProject && <ProjectPreview project={nextProject} class="mb-10 sm:mb-12" headingLevel="h3" />}
-				{prevProject && <ProjectPreview project={prevProject} class="mb-10 sm:mb-12" headingLevel="h3" />}
-			</div>
-		)
-	}
 </BaseLayout>

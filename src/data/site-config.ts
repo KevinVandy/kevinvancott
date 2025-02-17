@@ -148,9 +148,9 @@ const siteConfig: SiteConfig = {
 			projects: [
 				{
 					name: 'RentVision Platform',
-					link: 'https://rentvision.com/',
+					link: 'https://www.rentvision.com/solutions/apartment-revenue-management',
 					description: 'React Dashboard',
-					techStack: ['React', 'TypeScript', 'Next.js', 'TailwindCSS'],
+					techStack: ['Java', 'SQL', 'React', 'TypeScript', 'Next.js', 'Material UI', 'Less'],
 					accomplishments: [
 						'Improving Performance and Scalability of the platform with intelligent caching strategies.',
 						'Creating new dashboard data grids and charts.',
@@ -190,7 +190,7 @@ const siteConfig: SiteConfig = {
 			dateRange: 'Feb 2023 - Sept 2023',
 			company: 'Manifest Cyber',
 			link: 'https://manifestcyber.com/',
-			logo: '/logos/mc.jpg',
+			logo: '/logos/manifestcyber.jpg',
 			logoHeight: 100,
 			logoWidth: 100,
 			title: 'Senior Software Engineer',
@@ -364,7 +364,7 @@ const siteConfig: SiteConfig = {
 			title: "Associate's, Computer Information Technology",
 			projects: [
 				{
-					name: "Associate's in Computer Information Technology",
+					name: 'Computer Information Technology Degree',
 					link: 'https://www.southeast.edu/computerinformation/',
 					description: 'with a focus on PC and Web Development',
 					techStack: ['Java', 'C#.NET', 'JavaScript', 'PHP', 'SQL', 'Visual Basic', 'COBOL', 'Matlab'],

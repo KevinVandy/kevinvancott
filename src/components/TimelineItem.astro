@@ -40,7 +40,7 @@ const { dateRange, company, logo, logoHeight, logoWidth, title, index } = Astro.
 			index % 2 === 0 ? 'ml-[calc(50%+8rem)]' : 'ml-[calc(50%-36rem)]'
 		}`}
 	>
-		<div class={`mb-1 flex items-start justify-between ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}>
+		<div class="mb-1 flex items-start justify-between">
 			<div class="font-caveat text-2xl font-medium text-indigo-500 dark:text-indigo-400 sm:mb-0">
 				{company} - {title}
 			</div>
@@ -51,7 +51,7 @@ const { dateRange, company, logo, logoHeight, logoWidth, title, index } = Astro.
 						alt={`${company} logo`}
 						height={logoHeight}
 						width={logoWidth}
-						class={`${index % 2 === 0 ? 'ml-4' : 'mr-4'}`}
+						class="ml-4"
 					/>
 				)
 			}
