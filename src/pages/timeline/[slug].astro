@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import siteConfig from '../../data/site-config';
+import TimelineEntry from '../../components/TimelineEntry.astro';
+
+export async function getStaticPaths() {
+	return (siteConfig.jobs ?? []).map((job) => ({
+		params: { slug: job.company.toLowerCase().replace(/\s+/g, '-') },
+		props: { job },
+	}));
+}
+
+const company = Astro.params.slug;
+const job = siteConfig.jobs?.find((job) => job.company.toLowerCase().replace(/\s+/g, '-') === company);
+
+if (!job) {
+	throw new Error(`Job not found: ${company}`);
+}
+---
+
+<BaseLayout
+	title={`${job.company} - ${job.title}`}
+	description={`Details about my work at ${job.company} as ${job.title}`}
+	image={{ src: '/dante-preview.jpg', alt: 'The preview of the site' }}
+	showHeader={false}
+>
+	<TimelineEntry
+		dateRange={job.dateRange}
+		company={job.company}
+		link={job.link}
+		logo={job.logo}
+		logoHeight={job.logoHeight}
+		logoWidth={job.logoWidth}
+		title={job.title}
+		projects={job.projects}
+	/>
+</BaseLayout>

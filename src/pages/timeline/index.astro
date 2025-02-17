@@ -1,0 +1,17 @@
+---
+import type { Page } from 'astro';
+import { type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Timeline from '../../components/Timeline.astro';
+
+type Props = { page: Page<CollectionEntry<'projects'>> };
+---
+
+<BaseLayout
+	title="Portfolio"
+	description="Explore a diverse portfolio showcasing my passion and expertise"
+	image={{ src: '/dante-preview.jpg', alt: 'The preview of the site' }}
+	showHeader={false}
+>
+	<Timeline />
+</BaseLayout>

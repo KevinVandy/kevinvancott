@@ -1,6 +1,4 @@
 ---
-import type { Job } from '../data/site-config';
-import TimelineItem from './TimelineItem.astro';
 import siteConfig from '../data/site-config';
 import TimelineItemSimple from './TimelineItemSimple.astro';
 ---
@@ -11,7 +9,6 @@ import TimelineItemSimple from './TimelineItemSimple.astro';
 			<TimelineItemSimple
 				dateRange={job.dateRange}
 				company={job.company}
-				link={job.link}
 				logo={job.logo}
 				logoHeight={job.logoHeight}
 				logoWidth={job.logoWidth}
