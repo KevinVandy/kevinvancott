@@ -305,7 +305,7 @@ const siteConfig: SiteConfig = {
 					],
 				},
 				{
-					name: 'Formation-UI',
+					name: 'Formation UI',
 					description: 'React Component Library with Storybook',
 					link: 'https://test-formation-ui.netlify.app',
 					techStack: ['JavaScript', 'React', 'Material UI', 'Storybook'],
